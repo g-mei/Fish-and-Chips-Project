@@ -1,3 +1,4 @@
+<x-app-layout></x-app-layout>
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
