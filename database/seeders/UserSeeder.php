@@ -22,7 +22,7 @@ class UserSeeder extends Seeder
             'email' => 'admin@fishandchips.com',
             'email_verified_at' => now(),
             'password' => Hash::make('admin'),
-            'role' => 1,
+            'role_id' => 1,
             'remember_token' => Str::random(10),
         ],
         [
@@ -30,7 +30,7 @@ class UserSeeder extends Seeder
             'email' => 'customer@test.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
-            'role' => 2,
+            'role_id' => 2,
             'remember_token' => Str::random(10),
         ],
         [
@@ -38,7 +38,7 @@ class UserSeeder extends Seeder
             'email' => Str::random(10).'@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
-            'role' => 2,
+            'role_id' => 2,
             'remember_token' => Str::random(10),
         ],
         [
@@ -46,7 +46,7 @@ class UserSeeder extends Seeder
             'email' => Str::random(10).'@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
-            'role' => 2,
+            'role_id' => 2,
             'remember_token' => Str::random(10),
         ],
         [
@@ -54,7 +54,7 @@ class UserSeeder extends Seeder
             'email' => Str::random(10).'@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
-            'role' => 2,
+            'role_id' => 2,
             'remember_token' => Str::random(10),
         ]
         ]);
