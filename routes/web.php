@@ -17,7 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 })->name('/');
 
-
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+//links the jetstream.php routes
+require_once __DIR__ . '/jetstream.php';

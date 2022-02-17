@@ -2,6 +2,7 @@
 
 use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
+use Illuminate\Support\Facades\Auth;
 
 return [
 
@@ -61,7 +62,15 @@ return [
     |
     */
 
-    'home' => RouteServiceProvider::HOME,
+    'home' => function(){
+        //double checks if role is admin
+        if (Auth::user()->role_id === 1) {
+           return route('dashboard');
+        }
+        else{
+           return route('/');
+        }
+    },
 
     /*
     |--------------------------------------------------------------------------
