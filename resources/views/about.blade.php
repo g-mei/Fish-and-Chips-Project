@@ -12,7 +12,7 @@
     <body class="antialiased">
         <x-app-layout></x-app-layout>
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            <h1>This is the home page</h1>
+            <h1>This is the about</h1>
         </div>
     </body>
 </html>

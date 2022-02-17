@@ -18,8 +18,14 @@
                                 <x-jet-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')">
                                     {{ __('Home') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link>
+                                <x-jet-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')">
                                     {{ __('Menu') }}
+                                </x-jet-nav-link>
+                                <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                                    {{ __('About Us') }}
+                                </x-jet-nav-link>
+                                <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                                    {{ __('Dashboard') }}
                                 </x-jet-nav-link>
                             </div>
                         </div>
@@ -41,10 +47,6 @@
                                     </x-slot>
 
                                     <x-slot name="content">
-                                        <x-jet-dropdown-link  href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                                            {{ __('Dashboard') }}
-                                        </x-jet-dropdown-link>
-
                                         <x-jet-dropdown-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                                             {{ __('Profile') }}
                                         </x-jet-dropdown-link>
@@ -84,8 +86,14 @@
                         <x-jet-responsive-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')">
                             {{ __('Home') }}
                         </x-jet-responsive-nav-link>
-                        <x-jet-responsive-nav-link>
+                        <x-jet-responsive-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')">
                             {{ __('Menu') }}
+                        </x-jet-responsive-nav-link>
+                        <x-jet-responsive-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                            {{ __('About Us') }}
+                        </x-jet-responsive-nav-link>
+                        <x-jet-responsive-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                            {{ __('Dashboard') }}
                         </x-jet-responsive-nav-link>
                     </div>
 
@@ -101,10 +109,6 @@
 
                         <div class="mt-3 space-y-1">
                             <!-- Account Management -->
-                            <x-jet-responsive-nav-link  href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                                {{ __('Dashboard') }}
-                            </x-jet-responsive-nav-link>
-
                             <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                                 {{ __('Profile') }}
                             </x-jet-responsive-nav-link>
@@ -139,8 +143,11 @@
                                 <x-jet-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')">
                                     {{ __('Home') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link>
+                                <x-jet-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')">
                                     {{ __('Menu') }}
+                                </x-jet-nav-link>
+                                <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                                    {{ __('About Us') }}
                                 </x-jet-nav-link>
                             </div>
                         </div>
@@ -201,8 +208,11 @@
                         <x-jet-responsive-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')">
                             {{ __('Home') }}
                         </x-jet-responsive-nav-link>
-                        <x-jet-responsive-nav-link>
+                        <x-jet-responsive-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')">
                             {{ __('Menu') }}
+                        </x-jet-responsive-nav-link>
+                        <x-jet-responsive-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                            {{ __('About Us') }}
                         </x-jet-responsive-nav-link>
                     </div>
 
@@ -244,8 +254,11 @@
                                 <x-jet-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')">
                                     {{ __('Home') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link>
+                                <x-jet-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')">
                                     {{ __('Menu') }}
+                                </x-jet-nav-link>
+                                <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                                    {{ __('About Us') }}
                                 </x-jet-nav-link>
                             </div>
                         </div>
@@ -281,8 +294,11 @@
                         <x-jet-responsive-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')">
                             {{ __('Home') }}
                         </x-jet-responsive-nav-link>
-                        <x-jet-responsive-nav-link>
+                        <x-jet-responsive-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')">
                             {{ __('Menu') }}
+                        </x-jet-responsive-nav-link>
+                        <x-jet-responsive-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                            {{ __('About Us') }}
                         </x-jet-responsive-nav-link>
                     </div>
 

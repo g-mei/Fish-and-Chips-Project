@@ -13,9 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//GET the main pages
 Route::get('/', function () {
     return view('welcome');
 })->name('/');
+
+Route::get('/menu', function () {
+    return view('menu');
+})->name('menu');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
 
 //links the jetstream.php routes
 require_once __DIR__ . '/jetstream.php';
