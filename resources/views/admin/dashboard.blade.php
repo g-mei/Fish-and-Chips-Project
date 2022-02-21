@@ -20,15 +20,18 @@
         	@if(count($foods) > 1)
         	<div class="">
         	
-        		<table class="">
+        		<table class="table-auto">
         			<tr>
-        				<th>Food</th>
-        				<th>Cost</th>
+        				<th class="px-4 py-2">Food</th>
+        				<th class="px-4 py-2">Cost</th>
 					</tr>
             		@foreach($foods as $food)
             		<tr>
-            			<td>{{$food->name}}</td>
-            			<td>{{$food->cost}}</td>
+            			<td class="border px-4 py-2">{{$food->name}}</td>
+            			<td class="border px-4 py-2">{{$food->cost}}</td>
+            			<td class="border px-4 py-2">
+                			<a href="deleteFood/{{$food->id}}" class="text-red-600">Delete</a>
+            			</td>
             		</tr>
             		@endforeach
             	</table>

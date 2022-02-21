@@ -21,4 +21,11 @@ class DashboardController extends Controller
         
         return redirect('/dashboard');
     }
+    
+    function deleteFood ($id) {
+        $food = Food::find($id);
+        $food->delete();
+        
+        return redirect('/dashboard');
+    }
 }

@@ -26,5 +26,9 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
+//Route::resource('foods', 'App\Http\Controllers\FoodsController');
+Route::post('/storeFood', ['uses' => 'App\Http\Controllers\DashboardController@storeFood']);
+Route::get('/deleteFood/{id}', ['uses' => 'App\Http\Controllers\DashboardController@deleteFood']);
+
 //links the jetstream.php routes
 require_once __DIR__ . '/jetstream.php';
