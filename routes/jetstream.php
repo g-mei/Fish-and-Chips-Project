@@ -17,6 +17,17 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
     //only admin can access these routes
     Route::group(['middleware'=>'is_admin'], function(){
         Route::get('/dashboard', ['\App\Http\Controllers\DashboardController', 'index'])->name('dashboard');
-        //add other admin routes here
+
+        //viewing routes
+        Route::get('/dashboard/categories',['\App\Http\Controllers\DashboardController', 'viewCategories'])->name('categories');
+        Route::get('/dashboard/food',['\App\Http\Controllers\DashboardController', 'viewFood'])->name('food');
+        Route::get('/dashboard/orders',['\App\Http\Controllers\DashboardController', 'viewOrders'])->name('orders');
+        Route::get('/dashboard/order_history',['\App\Http\Controllers\DashboardController', 'viewOrderHistory'])->name('order_history');
+        Route::get('/dashboard/users',['\App\Http\Controllers\DashboardController', 'viewUsers'])->name('users');
+
+        //Route::resource('foods', 'App\Http\Controllers\FoodsController');        
+        Route::post('/storeFood', ['uses' => 'App\Http\Controllers\DashboardController@storeFood']);
+        Route::get('/deleteFood/{id}', ['uses' => 'App\Http\Controllers\DashboardController@deleteFood']);
+
     });
 });

@@ -1,8 +1,9 @@
 <x-app-layout></x-app-layout>
 <x-guest-layout>
     <x-jet-authentication-card>
-        <x-slot name="logo">
+        <x-slot name="header">
             <x-jet-authentication-card-logo />
+            <h1 class="text-2xl mt-3 flex justify-center font-bold">Register</h1>
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
