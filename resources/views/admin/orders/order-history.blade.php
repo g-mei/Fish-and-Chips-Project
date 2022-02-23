@@ -1,1 +1,0 @@
-<h1>Order history page</h1>

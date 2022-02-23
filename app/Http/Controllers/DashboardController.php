@@ -14,23 +14,23 @@ class DashboardController extends Controller
     }
 
     function viewCategories() {
-        return view('admin.categories.categories');
+        return view('admin.dashboard');
     }
 
     function viewFood() {
-        return view('admin.food.food-items');
+        return view('admin.dashboard');
     }
 
     function viewOrders() {
-        return view('admin.orders.orders');
+        return view('admin.dashboard');
     }
 
     function viewOrderHistory() {
-        return view('admin.orders.order-history');
+        return view('admin.dashboard');
     }
 
     function viewUsers() {
-        return view('admin.users.users');
+        return view('admin.dashboard');
     }
     
     function storeFood(Request $request) {
