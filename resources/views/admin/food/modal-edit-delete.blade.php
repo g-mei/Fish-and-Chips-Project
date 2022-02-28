@@ -11,13 +11,21 @@
                 
                 <label for="name" class="block font-bold text-gray-600">Name</label>
                 <input type="text" name="name"
-                    class="w-full p-2 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    class="w-full p-3 mb-4 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     value="{{$food->name}}">
 
                 <label for="cost" class="block font-bold text-gray-600">Cost</label>
                 <input type="number" name="cost" step=".01" name="cost"
-                    class="w-full p-2 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    class="w-full p-3 mb-4 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     value="{{$food->cost}}">
+
+                <label for="category" class="block font-bold text-gray-600">Category</label>
+                <select id="category" name="category" class="w-full p-3 mb-4 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    <option value="">--- Select a Category ---</option>
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
 
                 <div class="py-6">   
                     <a href="{{route('food')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button">Cancel</a>

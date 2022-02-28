@@ -19,7 +19,7 @@
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$food->image}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$food->name}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$food->cost}}</td>
-            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$food->category}}</td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$food->category_id}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
                 <button class="openModal text-blue-700 px-1" aria-label="edit" data-id="{{$food->id}}">Edit</button>
                 <button class="openModal text-red-600 px-1" aria-label="delete" data-id="{{$food->id}}">Delete</button>
