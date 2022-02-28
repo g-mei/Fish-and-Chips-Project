@@ -16,7 +16,7 @@
 
                 <div class="py-6">   
                     <a href="{{route('categories')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button">Cancel</a>
-                    <button class="px-4 py-2 text-white bg-blue-600 rounded" type="submit">Edit</button>
+                    <button class="px-4 py-2 text-white bg-blue-600 rounded" type="submit">Save</button>
                 </div>
             </form>
         </div>

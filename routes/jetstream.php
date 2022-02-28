@@ -33,6 +33,12 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::post('/dashboard/food',[FoodController::class, 'addFood'])->name('addFood');
         Route::put('/dashboard/food/{id}',[FoodController::class, 'editFood'])->name('editFood');
         Route::delete('/dashboard/food/{id}',[FoodController::class, 'deleteFood'])->name('deleteFood');
+
+        //Pack Routes
+        Route::get('/dashboard/packs',[PackController::class, 'index'])->name('packs');
+        Route::post('/dashboard/packs',[PackController::class, 'addPack'])->name('addPack');
+        Route::put('/dashboard/packs/{id}',[PackController::class, 'editPack'])->name('editPack');
+        Route::delete('/dashboard/packs/{id}',[PackController::class, 'deletePack'])->name('deletePack');
         
         //User Routes
         Route::get('/dashboard/users',[UserController::class, 'index'])->name('users');
