@@ -12,11 +12,9 @@
     
     <body class="antialiased min-h-screen relative">
 		<x-app-layout></x-app-layout>
-        <div class="flex">
-            <div class="flex-1">
-                @include('admin.sidebar')
-            </div>
-            <div class="flex-1 min-h-screen">
+        @include('admin.sidebar')
+        <div class="absolute min-h-screen w-[100%]" style="padding-left: 12rem">
+            <div class="mt-10" style="padding-left: 5rem">
                 @if (Route::is('categories'))
                     @include('admin.categories.categories')
                 @elseif(Route::is('food'))

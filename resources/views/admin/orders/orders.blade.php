@@ -1,1 +1,1 @@
-<h1>order page</h1>
+<h1 class="text-2xl">Orders</h1>

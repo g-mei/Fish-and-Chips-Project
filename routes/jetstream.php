@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 
@@ -33,10 +34,14 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::put('/dashboard/food/{id}',[FoodController::class, 'editFood'])->name('editFood');
         Route::delete('/dashboard/food/{id}',[FoodController::class, 'deleteFood'])->name('deleteFood');
         
+        //User Routes
+        Route::get('/dashboard/users',[UserController::class, 'index'])->name('users');
+        Route::put('/dashboard/users/{id}',[UserController::class, 'editUser'])->name('editUser');
+        Route::delete('/dashboard/users/{id}',[UserController::class, 'deleteUser'])->name('deleteUser');
+
         //viewing routes
         Route::get('/dashboard/orders',[DashboardController::class, 'viewOrders'])->name('orders');
         Route::get('/dashboard/order_history',[DashboardController::class, 'viewOrderHistory'])->name('order_history');
-        Route::get('/dashboard/users',[DashboardController::class, 'viewUsers'])->name('users');
 
         //Route::resource('foods', 'App\Http\Controllers\FoodsController');        
         Route::post('/storeFood', ['uses' => 'App\Http\Controllers\DashboardController@storeFood']);
