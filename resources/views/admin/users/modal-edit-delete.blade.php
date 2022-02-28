@@ -1,7 +1,7 @@
 {{-- Edit Modal for User --}}
 <div class="container flex justify-center mx-auto hidden modal" id="edit#{{$user->id}}">
     <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
-        <div class="max-w-sm p-6 bg-white rounded-md">
+        <div class="max-w-xl p-6 bg-white rounded-md">
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl">Edit User</h3>
             </div>
@@ -11,12 +11,12 @@
                 
                 <label for="name" class="block font-bold text-gray-600">Name</label>
                 <input type="text" name="name"
-                    class="w-full p-3 mb-4 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     value="{{$user->name}}">
 
                 <label for="email" class="block font-bold text-gray-600">Email</label>
                 <input type="email" name="email"
-                    class="w-full p-3 mb-4 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     value="{{$user->email}}">
 
                 <div class="py-6">   
@@ -38,7 +38,7 @@
             <form class="mt-5" action="{{route('deleteUser', ['id' => $user->id])}}" method="POST">
                 @method('DELETE')
                 @csrf
-                
+
                 <div class="py-6">   
                     <a href="{{route('users')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button">Cancel</a>
                     <button class="px-4 py-2 text-white bg-red-600 rounded" type="submit">Delete</button>

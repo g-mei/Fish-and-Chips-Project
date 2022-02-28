@@ -1,7 +1,7 @@
 {{-- Add Modal for Categories --}}
 <div class="container flex justify-center mx-auto hidden" id="addModal">
     <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
-        <div class="max-w-sm p-6 bg-white rounded-md">
+        <div class="max-w-xl p-6 bg-white rounded-md">
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl">Add Categories</h3>
             </div>
@@ -10,7 +10,7 @@
 
                 <label for="name" class="block font-bold text-gray-600">Name</label>
                 <input type="text" name="name"
-                    class="w-full p-3 mb-4 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     placeholder="Enter name">
 
                 <div class="py-6">   

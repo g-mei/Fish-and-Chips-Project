@@ -1,7 +1,7 @@
 {{-- Edit Modal for Food --}}
 <div class="container flex justify-center mx-auto hidden modal" id="edit#{{$food->id}}">
     <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
-        <div class="max-w-sm p-6 bg-white rounded-md">
+        <div class="max-w-xl p-6 bg-white rounded-md">
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl">Edit Food</h3>
             </div>
@@ -11,16 +11,16 @@
                 
                 <label for="name" class="block font-bold text-gray-600">Name</label>
                 <input type="text" name="name"
-                    class="w-full p-3 mb-4 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     value="{{$food->name}}">
 
                 <label for="cost" class="block font-bold text-gray-600">Cost</label>
-                <input type="number" name="cost" step=".01" name="cost"
-                    class="w-full p-3 mb-4 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
+                <input type="number" name="cost" step=".01" min="0" name="cost"
+                    class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     value="{{$food->cost}}">
 
                 <label for="category" class="block font-bold text-gray-600">Category</label>
-                <select id="category" name="category" class="w-full p-3 mb-4 border border-gray-300 rounded-l round shadow focus:outline-none focus:ring-2 focus:ring-blue-600">
+                <select id="category" name="category" class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600">
                     <option value="">--- Select a Category ---</option>
                     @foreach ($categories as $category)
                         <option value="{{$category->id}}">{{$category->name}}</option>
