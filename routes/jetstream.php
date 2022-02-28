@@ -41,6 +41,17 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         //Route::resource('foods', 'App\Http\Controllers\FoodsController');        
         Route::post('/storeFood', ['uses' => 'App\Http\Controllers\DashboardController@storeFood']);
         Route::get('/deleteFood/{id}', ['uses' => 'App\Http\Controllers\DashboardController@deleteFood']);
-
+        Route::get('/dashboard', ['\App\Http\Controllers\DashboardController', 'index'])->name('dashboard');
+    
+        //add other admin routes here
+        Route::post('/storeFood', ['uses' => 'App\Http\Controllers\DashboardController@storeFood']);
+        Route::get('/deleteFood/{id}', ['uses' => 'App\Http\Controllers\DashboardController@deleteFood']);
+        
+        //Route::resource('foods', 'App\Http\Controllers\FoodsController');        
+        Route::post('dashboard/storeFood', ['uses' => 'App\Http\Controllers\DashboardController@storeFood']);
+        Route::get('/dashboard/editFood/{id}',['\App\Http\Controllers\DashboardController', 'viewFoodDetail'])->name('food-edit');
+        Route::post('/dashboard/editFood/{id}',['\App\Http\Controllers\DashboardController', 'updateFood'])->name('food-edit');
+        Route::get('dashboard/deleteFood/{id}', ['uses' => 'App\Http\Controllers\DashboardController@deleteFood']);
+    
     });
 });

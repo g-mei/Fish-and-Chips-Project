@@ -13,7 +13,7 @@
     <body class="antialiased min-h-screen relative">
 		<x-app-layout></x-app-layout>
         <div class="flex">
-            <div class="flex-1">
+            <div class="flex-none">
                 @include('admin.sidebar')
             </div>
             <div class="flex-1 min-h-screen">
@@ -21,6 +21,8 @@
                     @include('admin.categories.categories')
                 @elseif(Route::is('food'))
                     @include('admin.food.food-items')
+                @elseif(Route::is('food-edit'))
+                    @include('admin.food.food-edit')
                 @elseif(Route::is('orders'))
                     @include('admin.orders.orders')
                 @elseif(Route::is('orders'))
