@@ -26,7 +26,7 @@
                 @elseif(Route::is('orders'))
                     @include('admin.orders.orders')
                 @elseif(Route::is('order_history'))
-                    @include('admin.orders.order_history')
+                    @include('admin.orders.order-history')
                 @elseif(Route::is('users'))
                     @include('admin.users.users')
                 @else
@@ -34,5 +34,6 @@
                 @endif
             </div>
         </div>
+        @stack('modal')
     </body>
 </html>

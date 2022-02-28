@@ -1,4 +1,35 @@
 <h1>Food</h1>
+
+<button type="button" class="openModal" aria-label="add">Add New</button>
+
+<table>
+    <thead>
+        <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Cost</th>
+            <th>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach ($foods as $food)
+        <tr>
+            <td>{{$food->image}}</td>
+            <td>{{$food->name}}</td>
+            <td>{{$food->cost}}</td>
+            <td>{{$food->cost}}</td>
+            <th>
+                <button class="openModal" aria-label="edit" data-id="{{$food->id}}">Edit</button>
+                <button class="openModal" aria-label="delete" data-id="{{$food->id}}">Delete</button>
+            </th>
+        </tr>
+        @include('admin.food.modal-edit-delete')
+    @endforeach
+    </tbody>
+</table>
+
+@include('admin.food.modal-add')
+
 {{-- <!-- Temporary(?) place for add/edit foods -->    
 		<!-- List of Food --> 
         <div class="relative flex items-top justify-center sm:items-center py-8">
@@ -39,7 +70,7 @@
                     <button class="text-white bg-indigo-600 ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md">Add</button>
                 </div>
                 <!-- Image upload -->
-                <!-- Dropdown for food category -->
+                <!-- Dropdown for food food -->
             </form>
         </div>
     </div> --}}

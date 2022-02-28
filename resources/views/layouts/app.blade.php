@@ -39,8 +39,10 @@
             </main>
         </div>
 
-        @stack('modals')
-
+        @push('modal')
+            <script type="text/javascript" src="{{URL::asset('js/modal.js')}}"></script>
+        @endpush
+        
         @livewireScripts
     </body>
 </html>
