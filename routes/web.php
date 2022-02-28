@@ -26,7 +26,5 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-
-
 //links the jetstream.php routes
 require_once __DIR__ . '/jetstream.php';

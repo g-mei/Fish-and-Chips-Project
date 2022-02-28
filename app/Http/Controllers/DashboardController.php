@@ -12,6 +12,26 @@ class DashboardController extends Controller
         
         return view('admin.dashboard')->with('foods', $foods);
     }
+
+    function viewCategories() {
+        return view('admin.dashboard');
+    }
+
+    function viewFood() {
+        return view('admin.dashboard');
+    }
+
+    function viewOrders() {
+        return view('admin.dashboard');
+    }
+
+    function viewOrderHistory() {
+        return view('admin.dashboard');
+    }
+
+    function viewUsers() {
+        return view('admin.dashboard');
+    }
     
     function storeFood(Request $request) {
         $food = new Food;
