@@ -9,7 +9,7 @@
                 @csrf
 
                 <label for="name" class="block font-bold text-gray-600">Name</label>
-                <input type="text" name="name"
+                <input type="text" name="name" id="name"
                     class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     placeholder="Enter name">
 

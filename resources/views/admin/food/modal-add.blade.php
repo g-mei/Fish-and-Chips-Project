@@ -5,16 +5,16 @@
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl">Add Food</h3>
             </div>
-            <form class="mt-5" action="{{route('addFood')}}" method="POST">
+            <form class="mt-5" action="{{route('addFood')}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <label for="name" class="block font-bold text-gray-600">Name</label>
-                <input type="text" name="name"
+                <input type="text" name="name" id="name"
                     class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     placeholder="Enter name">
 
                 <label for="cost" class="block font-bold text-gray-600">Cost</label>
-                <input type="number" name="cost" step=".01" min="0" name="cost"
+                <input type="number" name="cost" step=".01" min="0" name="cost" id="cost"
                     class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     placeholder="Enter the cost">
 
@@ -25,6 +25,11 @@
                         <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                 </select>
+
+                <label for="image" class="block font-bold text-gray-600">Upload Image</label>
+                <input type="file" name="image" id="image"
+                    class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
+                    accept="image/png, image/jpeg">
 
                 <div class="py-6">   
                     <a href="{{route('food')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button" aria-label="cancel add">Cancel</a>
