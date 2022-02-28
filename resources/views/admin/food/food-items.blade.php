@@ -30,9 +30,9 @@
 
 @include('admin.food.modal-add')
 
-{{-- <!-- Temporary(?) place for add/edit foods -->    
+ <!-- Temporary(?) place for add/edit foods -->    
 		<!-- List of Food --> 
-        <div class="relative flex items-top justify-center sm:items-center py-8">
+        {{-- <div class="relative flex items-top justify-center sm:items-center py-8">
         </h2>
         @if(count($foods) > 1)
         <div class="">
@@ -57,10 +57,10 @@
             </table>
         </div>
     @endif
-	</div>
+	</div> --}}
 
     <!-- Add Food form -->
-    <div class="relative flex items-top justify-center sm:items-center py-8">
+    {{-- <div class="relative flex items-top justify-center sm:items-center py-8">
         <div class="">
             <h2 class="text-lg">Add Food</h2>
             <form action="storeFood" method="POST">
@@ -78,4 +78,4 @@
         </div>
     </div> 
     
-</div>
+</div> --}}

@@ -13,7 +13,7 @@
     <body class="antialiased min-h-screen relative">
 		<x-app-layout></x-app-layout>
         <div class="flex">
-            <div class="flex-none">
+            <div class="flex-1">
                 @include('admin.sidebar')
             </div>
             <div class="flex-1 min-h-screen">

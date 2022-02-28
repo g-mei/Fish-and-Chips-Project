@@ -12,29 +12,28 @@ class FoodController extends Controller
         return view('admin.dashboard')->with('foods', $foods);
     }
 
-    function addFood() {
-        $foods = Food::all();
-        return view('admin.dashboard')->with('foods', $foods);
+    function addFood(Request $request) {
+        $food = new Food;
+        $food->name = $request->input('name');
+        $food->cost = $request->input('cost');
+        $food->save();
+
+        return redirect('/dashboard');
     }
 
-    function editFood() {
-        $foods = Food::all();
-        return view('admin.dashboard')->with('foods', $foods);
+    function editFood(Request $request) {
+        $food = Food::find($request->id);
+        $food->name = $request->input('name');
+        $food->cost = $request->input('cost');
+        $food->save();
+
+        return redirect('/dashboard');
     }
     
     function deleteFood ($id) {
         $food_item= Food::find($id);
         $food_item->delete();
 
-        return redirect('/dashboard');
-    }
-
-    function storeFood(Request $request) {
-        $foods = new Food;
-        $foods->name = $request->input('name');
-        $foods->cost = $request->input('cost');
-        $foods->save();
-        
         return redirect('/dashboard');
     }
 }
