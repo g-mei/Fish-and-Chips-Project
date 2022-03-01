@@ -4,25 +4,25 @@
     <button type="button"  class="openModal bg-blue-600 px-2 py-3 rounded-md text-white hover:shadow-md" data-label="add">Add New</button>
 </div>
 
-<table class="bg-gray-100 dark:bg-gray-700">
+<table class="bg-gray-100">
     <thead>
         <tr>
-            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase dark:text-gray-900">Image</th>
-            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase dark:text-gray-900">Name</th>
-            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase dark:text-gray-900">Cost</th>
-            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase dark:text-gray-900">Category</th>
-            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase dark:text-gray-900">Description</th>
+            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Image</th>
+            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Name</th>
+            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Cost</th>
+            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Category</th>
+            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Description</th>
         </tr>
     </thead>
-    <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+    <tbody class="bg-white divide-y divide-gray-200">
     @foreach ($foods as $food)
-        <tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"><img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 200px"></td>
-            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$food->name}}</td>
-            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$food->cost}}</td>
-            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$food->category_id}}</td>
-            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$food->description}}</td>
-            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
+        <tr class="hover:bg-gray-100">
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap"><img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 200px"></td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->name}}</td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->cost}}</td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->category_id}}</td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->description}}</td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                 <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$food->id}}">Edit</button>
                 <button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$food->id}}">Delete</button>
             </td>
