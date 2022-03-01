@@ -1,5 +1,5 @@
 {{-- Edit Modal for Categories --}}
-<div class="container flex justify-center mx-auto hidden modal" id="edit#{{$category->id}}">
+<div class="container justify-center mx-auto hidden modal" id="edit#{{$category->id}}">
     <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
         <div class="max-w-xl p-6 bg-white rounded-md">
             <div class="flex items-center justify-between">
@@ -24,7 +24,7 @@
 </div>
 
 {{-- Delete Modal for Categories --}}
-<div class="container flex justify-center mx-auto hidden modal" id="delete#{{$category->id}}">
+<div class="container justify-center mx-auto hidden modal" id="delete#{{$category->id}}">
     <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
         <div class="max-w-sm p-6 bg-white rounded-md">
             <div class="flex items-center justify-between">

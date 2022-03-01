@@ -14,16 +14,20 @@ const closeModalButtons = document.querySelectorAll('.closeModal');
 
 openModalButtons.forEach(button => {
     button.addEventListener('click', (event) => {
-        const btnLabel = button.ariaLabel;
+        const btnLabel = button.getAttribute('data-label');
         const btnId = button.getAttribute('data-id');
+
+        console.log(btnId)
 
         if(btnLabel === 'add') {
             addModal.classList.remove('hidden');
+            addModal.classList.add('visible');
         }
         
         modals.forEach(modal => {
             if(modal.id === `${btnLabel}#${btnId}`){
                 modal.classList.remove('hidden');
+                modal.classList.add('visible');
             }
         });
     });
@@ -33,14 +37,16 @@ openModalButtons.forEach(button => {
 closeModalButtons.forEach(button => {
     button.addEventListener('click', (event) => {
         event.preventDefault();
-        const btnLabel = button.ariaLabel;
+        const btnLabel = button.getAttribute('data-label');
 
         if(btnLabel === 'cancel add') {
             addModal.classList.add('hidden');
+            addModal.classList.remove('visible');
         }
 
         modals.forEach(modal => {
             modal.classList.add('hidden');
+            modal.classList.remove('visible');
         })
     });
 });

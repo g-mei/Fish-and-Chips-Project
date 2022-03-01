@@ -37,7 +37,7 @@
                     accept="image/png, image/jpeg">
 
                 <div class="py-6">   
-                    <a href="{{route('food')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button" aria-label="cancel add">Cancel</a>
+                    <a href="{{route('food')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button" data-label="cancel add">Cancel</a>
                     <button class="px-4 py-2 text-white bg-blue-600 rounded" type="submit">Add</button>
                 </div>
             </form>

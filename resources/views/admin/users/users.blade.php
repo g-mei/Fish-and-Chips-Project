@@ -13,8 +13,8 @@
                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$user->name}}</td>
                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$user->email}}</td>
                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                    <button class="openModal text-blue-700 px-1" aria-label="edit" data-id="{{$user->id}}">Edit</button>
-                    <button class="openModal text-red-600 px-1" aria-label="delete" data-id="{{$user->id}}">Delete</button>
+                    <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$user->id}}">Edit</button>
+                    <button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$user->id}}">Delete</button>
                 </td>
             </tr>
             @include('admin.users.modal-edit-delete')

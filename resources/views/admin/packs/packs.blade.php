@@ -1,7 +1,7 @@
 <h1 class="text-2xl">Packs</h1>
 
 <div class="py-10">
-    <button type="button" class="openModal bg-blue-600 px-2 py-3 rounded-md text-white hover:shadow-md" aria-label="add">Add New</button>
+    <button type="button" class="openModal bg-blue-600 px-2 py-3 rounded-md text-white hover:shadow-md" data-label="add">Add New</button>
 </div>
 
 <table class="bg-gray-100 dark:bg-gray-700">
@@ -21,8 +21,8 @@
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$pack->cost}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">{{$pack->description}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                <button class="openModal text-blue-700 px-1" aria-label="edit" data-id="{{$pack->id}}">Edit</button>
-                <button class="openModal text-red-600 px-1" aria-label="delete" data-id="{{$pack->id}}">Delete</button>
+                <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$pack->id}}">Edit</button>
+                <button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$pack->id}}">Delete</button>
             </td>
         </tr>
         @include('admin.packs.modal-edit-delete')

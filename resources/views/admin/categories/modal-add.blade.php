@@ -1,5 +1,5 @@
 {{-- Add Modal for Categories --}}
-<div class="container flex justify-center mx-auto hidden" id="addModal">
+<div class="container justify-center mx-auto modal hidden" id="addModal">
     <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
         <div class="max-w-xl p-6 bg-white rounded-md">
             <div class="flex items-center justify-between">
@@ -14,7 +14,7 @@
                     placeholder="Enter name">
 
                 <div class="py-6">   
-                    <a href="{{route('categories')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button" aria-label="cancel add">Cancel</a>
+                    <a href="{{route('categories')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button" data-label="cancel add">Cancel</a>
                     <button class="px-4 py-2 text-white bg-blue-600 rounded" type="submit">Add</button>
                 </div>
             </form>
