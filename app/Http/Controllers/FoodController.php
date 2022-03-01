@@ -21,6 +21,7 @@ class FoodController extends Controller
         $food = new Food;
         $food->name = $request->input('name');
         $food->cost = $request->input('cost');
+        $food->description = $request->input('description');
         $food->category_id = $request->input('category');
 
         if($request->hasFile('image')) {
@@ -28,8 +29,6 @@ class FoodController extends Controller
             $request->file('image')->storeAs('public/image/food_items/', $image_name);
             $food->image = $image_name;
         }
-        
-        $input['image'] = $image_name;
         
         $food->save();
 
@@ -40,6 +39,7 @@ class FoodController extends Controller
         $food = Food::find($request->id);
         $food->name = $request->input('name');
         $food->cost = $request->input('cost');
+        $food->description = $request->input('description');
         $food->category_id = $request->input('category');
 
         if($request->hasFile('image')) {

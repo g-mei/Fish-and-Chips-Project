@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->double('cost', 8, 2)->nullable();
         });

@@ -4,6 +4,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\PackController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 

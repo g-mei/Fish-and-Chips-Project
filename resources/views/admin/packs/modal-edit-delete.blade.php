@@ -5,7 +5,7 @@
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl">Edit Pack</h3>
             </div>
-            <form class="mt-5" action="{{route('editPack', ['id' => $pack->id])}}" method="POST">
+            <form class="mt-5" action="{{route('editPack', ['id' => $pack->id])}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
 
@@ -17,7 +17,12 @@
                 <label for="cost" class="block font-bold text-gray-600">Cost</label>
                 <input type="number" name="cost" step=".01" min="0" name="cost" id="cost"
                     class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    value="{{$food->cost}}">
+                    value="{{$pack->cost}}">
+                
+                <label for="description" class="block font-bold text-gray-600">Description</label>
+                <textarea name="description" id="description" rows="4"
+                    class="w-full mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600">
+                    {{$pack->description}}</textarea>
                 
                 <label for="image" class="block font-bold text-gray-600">Upload Image</label>
                 <input type="file" name="image" id="image"

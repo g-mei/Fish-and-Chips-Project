@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Model\Pack;
+use App\Models\Pack;
 
 class PackController extends Controller
 {
@@ -18,6 +18,7 @@ class PackController extends Controller
         $pack = new Pack;
         $pack->name = $request->input('name');
         $pack->cost = $request->input('cost');
+        $pack->description = $request->input('description');
         $pack->category_id = $request->input('category');
 
         if($request->hasFile('image')) {
@@ -25,8 +26,6 @@ class PackController extends Controller
             $request->file('image')->storeAs('public/image/food_packs/', $image_name);
             $pack->image = $image_name;
         }
-        
-        $input['image'] = $image_name;
         
         $pack->save();
 
@@ -37,6 +36,7 @@ class PackController extends Controller
         $pack = Pack::find($request->id);
         $pack->name = $request->input('name');
         $pack->cost = $request->input('cost');
+        $pack->description = $request->input('description');
         $pack->category_id = $request->input('category');
 
         if($request->hasFile('image')) {

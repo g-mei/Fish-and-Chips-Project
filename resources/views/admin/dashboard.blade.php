@@ -21,6 +21,8 @@
                     @include('admin.food.food-items')
                 @elseif(Route::is('food-edit'))
                     @include('admin.food.food-edit')
+                @elseif(Route::is('packs'))
+                    @include('admin.packs.packs')
                 @elseif(Route::is('orders'))
                     @include('admin.orders.orders')
                 @elseif(Route::is('orders'))
