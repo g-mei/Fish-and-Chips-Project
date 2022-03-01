@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PackController;
+use App\Http\Controllers\IngredientController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 
@@ -28,6 +29,12 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::post('/dashboard/categories', [CategoryController::class, 'addCategory'])->name('addCategory');
         Route::put('/dashboard/categories/{id}', [CategoryController::class, 'editCategory'])->name('editCategory');
         Route::delete('/dashboard/categories/{id}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
+
+        //Ingredient Routes
+        Route::get('/dashboard/ingredients', [IngredientController::class, 'index'])->name('ingredients');
+        Route::post('/dashboard/ingredients', [IngredientController::class, 'addIngredient'])->name('addIngredient');
+        Route::put('/dashboard/ingredients/{id}', [IngredientController::class, 'editIngredient'])->name('editIngredient');
+        Route::delete('/dashboard/ingredients/{id}', [IngredientController::class, 'deleteIngredient'])->name('deleteIngredient');
 
         //Food Routes
         Route::get('/dashboard/food',[FoodController::class, 'index'])->name('food');

@@ -17,6 +17,8 @@
             <div class="mt-10" style="padding-left: 5rem">
                 @if (Route::is('categories'))
                     @include('admin.categories.categories')
+                @elseif (Route::is('ingredients'))
+                    @include('admin.ingredients.ingredients')
                 @elseif(Route::is('food'))
                     @include('admin.food.food-items')
                 @elseif(Route::is('food-edit'))
