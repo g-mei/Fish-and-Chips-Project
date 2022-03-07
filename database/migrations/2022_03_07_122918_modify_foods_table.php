@@ -16,6 +16,10 @@ return new class extends Migration
         Schema::table('foods', function (Blueprint $table) {
             $table->string('description')->nullable();
         });
+        
+        Schema::table('packs', function (Blueprint $table) {
+            $table->string('description')->nullable();
+        });
     }
 
     /**
@@ -26,6 +30,10 @@ return new class extends Migration
     public function down()
     {
         Schema::table('foods', function (Blueprint $table) {
+            $table->dropColumn('description');
+        });
+        
+        Schema::table('packs', function (Blueprint $table) {
             $table->dropColumn('description');
         });
     }
