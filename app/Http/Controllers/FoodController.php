@@ -32,7 +32,7 @@ class FoodController extends Controller
         
         $food->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/food');
     }
 
     function editFood(Request $request) {
@@ -50,13 +50,13 @@ class FoodController extends Controller
         
         $food->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/food');
     }
     
     function deleteFood ($id) {
         $food_item= Food::find($id);
         $food_item->delete();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/food');
     }
 }

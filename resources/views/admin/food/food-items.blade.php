@@ -20,7 +20,7 @@
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap"><img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 200px"></td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->name}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->cost}}</td>
-            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->category_id}}</td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->category->name??null}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->description}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                 <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$food->id}}">Edit</button>
