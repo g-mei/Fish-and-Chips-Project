@@ -10,6 +10,7 @@
             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Image</th>
             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Name</th>
             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Cost</th>
+            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Category</th>
             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Description</th>
         </tr>
     </thead>
@@ -19,6 +20,7 @@
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap"><img src="{{ asset('storage/image/food_packs/'.$pack->image) }}" alt="{{$pack->image}}" style="width: 200px"></td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->name}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->cost}}</td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->category->name??null}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->description}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                 <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$pack->id}}">Edit</button>

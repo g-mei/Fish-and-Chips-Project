@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pack;
+use App\Models\Category;
 
 class PackController extends Controller
 {
     function index() {
         $packs = Pack::all();
+        $categories = Category::all();
 
         return view('admin.dashboard')
-        ->with('packs', $packs);
+        ->with('packs', $packs)
+        ->with('categories', $categories);
     }
 
     function addPack(Request $request) {
@@ -29,7 +32,7 @@ class PackController extends Controller
         
         $pack->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/packs');
     }
 
     function editPack(Request $request) {
@@ -47,13 +50,13 @@ class PackController extends Controller
         
         $pack->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/packs');
     }
     
     function deletePack ($id) {
         $pack_item= Pack::find($id);
         $pack_item->delete();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/packs');
     }
 }
