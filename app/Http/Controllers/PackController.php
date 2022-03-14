@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Pack;
 use App\Models\Category;
+use App\Models\Food;
 
 class PackController extends Controller
 {
     function index() {
         $packs = Pack::all();
         $categories = Category::all();
+        $foods = Food::all();
 
         return view('admin.dashboard')
         ->with('packs', $packs)
-        ->with('categories', $categories);
+        ->with('categories', $categories)
+        ->with('foods', $foods);
     }
 
     function addPack(Request $request) {
