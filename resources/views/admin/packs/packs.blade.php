@@ -1,3 +1,4 @@
+
 <h1 class="text-2xl">Packs</h1>
 
 <div class="py-10">
@@ -21,7 +22,7 @@
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->name}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->cost}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->category->name??null}}</td>
-            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->description}}</td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-wrap">{{$pack->description}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                 <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$pack->id}}">Edit</button>
                 <button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$pack->id}}">Delete</button>

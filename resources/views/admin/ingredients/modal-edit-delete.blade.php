@@ -15,7 +15,7 @@
                     value="{{$ingredient->name}}">
 
                 <div class="py-6">   
-                    <a href="{{route('ingredients')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button">Cancel</a>
+                    <a href="{{route('food')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button">Cancel</a>
                     <button class="px-4 py-2 text-white bg-blue-600 rounded" type="submit">Save</button>
                 </div>
             </form>
@@ -35,7 +35,7 @@
                 @csrf
 
                 <div class="py-6">   
-                    <a href="{{route('ingredients')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button">Cancel</a>
+                    <a href="{{route('food')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button">Cancel</a>
                     <button class="px-4 py-2 text-white bg-red-600 rounded" type="submit">Delete</button>
                 </div>
 

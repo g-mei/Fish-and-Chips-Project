@@ -1,0 +1,13 @@
+.responsive-container {
+    display: flex;
+}
+
+td {
+    width: 100px;
+}
+
+@media only screen and (max-width: 1400px) {
+    .responsive-container {
+        display: block;
+    }
+  }

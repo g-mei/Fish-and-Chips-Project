@@ -1,5 +1,5 @@
 {{-- Add Modal for Food --}}
-<div class="container flex justify-center mx-auto hidden" id="addModal">
+<div class="container flex justify-center mx-auto hidden" id="addFoodModal">
     <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
         <div class="max-w-xl p-6 bg-white rounded-md">
             <div class="flex items-center justify-between">

@@ -12,15 +12,14 @@
         <link href="{{asset('/css/app.css')}}" rel="stylesheet">
     </head>
     
-    <body class="antialiased min-h-screen relative">
-		<x-app-layout></x-app-layout>
+    <body class="antialiased relative">
+        <x-app-layout></x-app-layout>
         @include('admin.sidebar')
-        <div class="absolute min-h-screen w-[100%]" style="padding-left: 12rem">
+
+        <div class="absolute w-[100%] overflow-hidden min-h-screen" style="padding-left: 10rem">
             <div class="mt-10" style="padding-left: 5rem">
                 @if (Route::is('categories'))
                     @include('admin.categories.categories')
-                @elseif (Route::is('ingredients'))
-                    @include('admin.ingredients.ingredients')
                 @elseif(Route::is('food'))
                     @include('admin.food.food-items')
                 @elseif(Route::is('food-edit'))

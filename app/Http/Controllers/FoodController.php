@@ -5,16 +5,19 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Food;
 use App\Models\Category;
+use App\Models\Ingredient;
 
 class FoodController extends Controller
 {
     function index() {
         $foods = Food::all();
         $categories = Category::all();
+        $ingredients = Ingredient::all();
 
         return view('admin.dashboard')
         ->with('foods', $foods)
-        ->with('categories', $categories);
+        ->with('categories', $categories)
+        ->with('ingredients', $ingredients);
     }
 
     function addFood(Request $request) {

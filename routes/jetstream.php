@@ -31,7 +31,6 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::delete('/dashboard/categories/{id}', [CategoryController::class, 'deleteCategory'])->name('deleteCategory');
 
         //Ingredient Routes
-        Route::get('/dashboard/ingredients', [IngredientController::class, 'index'])->name('ingredients');
         Route::post('/dashboard/ingredients', [IngredientController::class, 'addIngredient'])->name('addIngredient');
         Route::put('/dashboard/ingredients/{id}', [IngredientController::class, 'editIngredient'])->name('editIngredient');
         Route::delete('/dashboard/ingredients/{id}', [IngredientController::class, 'deleteIngredient'])->name('deleteIngredient');

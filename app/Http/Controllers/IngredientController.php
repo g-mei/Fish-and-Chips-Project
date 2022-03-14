@@ -7,11 +7,6 @@ use App\Models\Ingredient;
 
 class IngredientController extends Controller
 {
-    function index() {
-        $ingredients = Ingredient::all();
-        return view('admin.dashboard')->with('ingredients', $ingredients);
-    }
-
     function addIngredient(Request $request) {
         $ingredient = new Ingredient;
         $ingredient->name = $request->input('name');
