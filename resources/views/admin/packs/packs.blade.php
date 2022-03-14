@@ -28,7 +28,15 @@
                 <button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$pack->id}}">Delete</button>
             </td>
         </tr>
+        
+        <!-- temporary place for displaying food in the pack -->
+            <tr class="hover:bg-gray-50">
+                @foreach ($pack->foods as $food)
+                <td class="py-4 px-6 text-sm font-small text-gray-300 whitespace-nowrap">{{$food->name}}</td>
+                @endforeach
+            </tr>
         @include('admin.packs.modal-edit-delete')
+        
     @endforeach
     </tbody>
 </table>
