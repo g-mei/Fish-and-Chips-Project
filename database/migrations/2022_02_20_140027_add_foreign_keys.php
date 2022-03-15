@@ -28,38 +28,56 @@ return new class extends Migration
             $table->foreign('category_id')->references('id')->on('categories');
         });
         
-        Schema::create('orders_foods', function (Blueprint $table) {
+        Schema::create('order_food', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->integer('qty');
             
             $table->unsignedBigInteger('order_id');
-            $table->foreign('order_id')->references('id')->on('orders');
+            $table->foreign('order_id')
+            ->references('id')
+            ->on('orders')
+            ->onDelete('cascade');
             
             $table->unsignedBigInteger('food_id');
-            $table->foreign('food_id')->references('id')->on('foods');
+            $table->foreign('food_id')
+            ->references('id')
+            ->on('foods')
+            ->onDelete('cascade');
         });
         
-        Schema::create('foods_packs', function (Blueprint $table) {
+        Schema::create('food_pack', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             
             $table->unsignedBigInteger('food_id');
-            $table->foreign('food_id')->references('id')->on('foods');
+            $table->foreign('food_id')
+            ->references('id')
+            ->on('foods')
+            ->onDelete('cascade');
             
             $table->unsignedBigInteger('pack_id');
-            $table->foreign('pack_id')->references('id')->on('packs');
+            $table->foreign('pack_id')
+            ->references('id')
+            ->on('packs')
+            ->onDelete('cascade');
         });
         
-        Schema::create('foods_ingredients', function (Blueprint $table) {
+        Schema::create('food_ingredient', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             
             $table->unsignedBigInteger('food_id');
-            $table->foreign('food_id')->references('id')->on('foods');
+            $table->foreign('food_id')
+            ->references('id')
+            ->on('foods')
+            ->onDelete('cascade');
             
             $table->unsignedBigInteger('ingredient_id');
-            $table->foreign('ingredient_id')->references('id')->on('ingredients');
+            $table->foreign('ingredient_id')
+            ->references('id')
+            ->on('ingredients')
+            ->onDelete('cascade');
         });
     }
 
@@ -85,29 +103,33 @@ return new class extends Migration
             $table->dropColumn('category_id');
         });
         
-        Schema::table('orders_foods', function (Blueprint $table) {
-            $table->dropForeign('orders_foods_order_id_foreign');
+        Schema::table('order_food', function (Blueprint $table) {
+            $table->dropForeign('order_food_order_id_foreign');
             $table->dropColumn('order_id');
-            $table->dropForeign('orders_foods_food_id_foreign');
+            $table->dropForeign('order_food_food_id_foreign');
             $table->dropColumn('food_id');
         });
         
-        Schema::table('foods_packs', function (Blueprint $table) {
-            $table->dropForeign('foods_packs_food_id_foreign');
+        Schema::table('food_pack', function (Blueprint $table) {
+            $table->dropForeign('food_pack_food_id_foreign');
             $table->dropColumn('food_id');
-            $table->dropForeign('foods_packs_pack_id_foreign');
+            $table->dropForeign('food_pack_pack_id_foreign');
             $table->dropColumn('pack_id');
         });
         
-        Schema::table('foods_ingredients', function (Blueprint $table) {
-            $table->dropForeign('foods_ingredients_food_id_foreign');
+        Schema::table('food_ingredient', function (Blueprint $table) {
+            $table->dropForeign('food_ingredient_food_id_foreign');
             $table->dropColumn('food_id');
-            $table->dropForeign('foods_ingredients_ingredient_id_foreign');
+            $table->dropForeign('food_ingredient_ingredient_id_foreign');
             $table->dropColumn('ingredient_id');
         });
         
+        Schema::dropIfExists('order_food');
+        Schema::dropIfExists('food_pack');
+        Schema::dropIfExists('food_ingredient');
         Schema::dropIfExists('orders_foods');
         Schema::dropIfExists('foods_packs');
         Schema::dropIfExists('foods_ingredients');
+        
     }
 };
