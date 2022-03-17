@@ -1,3 +1,5 @@
+<x-jet-validation-errors class="mb-4" />
+
 <h1 class="text-2xl">Users</h1>
 
 <table class="bg-gray-100 mt-10">

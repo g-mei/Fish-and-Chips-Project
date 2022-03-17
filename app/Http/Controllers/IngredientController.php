@@ -8,6 +8,10 @@ use App\Models\Ingredient;
 class IngredientController extends Controller
 {
     function addIngredient(Request $request) {
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+        
         $ingredient = new Ingredient;
         $ingredient->name = $request->input('name');
         $ingredient->save();

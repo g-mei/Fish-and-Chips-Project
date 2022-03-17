@@ -1,8 +1,10 @@
+<x-jet-validation-errors class="mb-4" />
+
 <div class="responsive-container">
     <div class="mb-5" style="margin-right: 100px">
         <h1 class="text-2xl">Food Items</h1>
 
-        <div class="py-10">
+        <div class="py-5">
             <button type="button"  class="openFoodModal bg-blue-600 px-2 py-3 rounded-md text-white hover:shadow-md" data-label="add">Add New</button>
         </div>
 

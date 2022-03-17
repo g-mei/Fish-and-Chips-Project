@@ -21,6 +21,11 @@ class FoodController extends Controller
     }
 
     function addFood(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'cost' => 'required'
+        ]);
+        
         $food = new Food;
         $food->name = $request->input('name');
         $food->cost = $request->input('cost');
@@ -39,6 +44,11 @@ class FoodController extends Controller
     }
 
     function editFood(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'cost' => 'required'
+        ]);
+        
         $food = Food::find($request->id);
         $food->name = $request->input('name');
         $food->cost = $request->input('cost');

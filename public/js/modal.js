@@ -17,6 +17,7 @@ const openFoodModalButtons = document.querySelectorAll('.openFoodModal');
 
 openModalButtons.forEach(button => {
     button.addEventListener('click', (event) => {
+        event.preventDefault();
         const btnLabel = button.getAttribute('data-label');
         const btnId = button.getAttribute('data-id');
 
@@ -52,6 +53,7 @@ closeModalButtons.forEach(button => {
 //For food modal
 openFoodModalButtons.forEach(button => {
     button.addEventListener('click', (event) => {
+        event.preventDefault();
         const btnLabel = button.getAttribute('data-label');
         const btnId = button.getAttribute('data-id');
 

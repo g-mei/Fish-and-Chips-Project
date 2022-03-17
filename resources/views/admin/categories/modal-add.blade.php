@@ -5,6 +5,7 @@
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl">Add Categories</h3>
             </div>
+
             <form class="mt-5" action="{{route('addCategory')}}" method="POST">
                 @csrf
 

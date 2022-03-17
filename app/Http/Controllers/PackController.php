@@ -21,6 +21,11 @@ class PackController extends Controller
     }
 
     function addPack(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'cost' => 'required'
+        ]);
+
         $pack = new Pack;
         $pack->name = $request->input('name');
         $pack->cost = $request->input('cost');
@@ -39,6 +44,11 @@ class PackController extends Controller
     }
 
     function editPack(Request $request) {
+        $this->validate($request, [
+            'name' => 'required',
+            'cost' => 'required'
+        ]);
+        
         $pack = Pack::find($request->id);
         $pack->name = $request->input('name');
         $pack->cost = $request->input('cost');

@@ -13,6 +13,10 @@ class CategoryController extends Controller
     }
 
     function addCategory(Request $request) {
+        $this->validate($request, [
+            'name' => 'required'
+        ]);
+
         $category = new Category;
         $category->name = $request->input('name');
         $category->save();
