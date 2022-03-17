@@ -10,9 +10,9 @@ use App\Models\Ingredient;
 class FoodController extends Controller
 {
     function index() {
-        $foods = Food::all();
+        $foods = Food::paginate(5, ['*'], 'food_pages');
         $categories = Category::all();
-        $ingredients = Ingredient::all();
+        $ingredients = Ingredient::paginate(8, ['*'], 'ingredient_pages');
 
         return view('admin.dashboard')
         ->with('foods', $foods)

@@ -21,3 +21,7 @@
         @endforeach
     </tbody>
 </table>
+
+<div class="mt-10">
+    {{ $users->links() }}
+</div>

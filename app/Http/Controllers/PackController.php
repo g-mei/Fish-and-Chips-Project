@@ -10,7 +10,7 @@ use App\Models\Food;
 class PackController extends Controller
 {
     function index() {
-        $packs = Pack::all();
+        $packs = Pack::paginate(5);
         $categories = Category::all();
         $foods = Food::all();
 

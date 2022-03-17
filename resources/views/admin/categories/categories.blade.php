@@ -25,3 +25,7 @@
 </table>
 
 @include('admin.categories.modal-add')
+
+<div class="mt-10">
+    {{ $categories->links() }}
+</div>

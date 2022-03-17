@@ -42,3 +42,7 @@
 </table>
 
 @include('admin.packs.modal-add')
+
+<div class="mt-10">
+    {{ $packs->links() }}
+</div>

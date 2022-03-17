@@ -22,13 +22,11 @@ openModalButtons.forEach(button => {
 
         if(btnLabel === 'add') {
             addModal.classList.remove('hidden');
-            addModal.classList.add('visible');
         }
         
         modals.forEach(modal => {
             if(modal.id === `${btnLabel}#${btnId}`){
                 modal.classList.remove('hidden');
-                modal.classList.add('visible');
             }
         });
     });
@@ -42,14 +40,11 @@ closeModalButtons.forEach(button => {
 
         if(btnLabel === 'cancel add') {
             addModal.classList.add('hidden');
-            addModal.classList.remove('visible');
             addFoodModal.classList.add('hidden');
-            addFoodModal.classList.remove('visible');
         }
 
         modals.forEach(modal => {
             modal.classList.add('hidden');
-            modal.classList.remove('visible');
         })
     });
 });
@@ -62,13 +57,11 @@ openFoodModalButtons.forEach(button => {
 
         if(btnLabel === 'add') {
             addFoodModal.classList.remove('hidden');
-            addFoodModal.classList.add('visible');
         }
         
         modals.forEach(modal => {
             if(modal.id === `${btnLabel}#${btnId}`){
                 modal.classList.remove('hidden');
-                modal.classList.add('visible');
             }
         });
     });

@@ -1,5 +1,5 @@
 <div class="responsive-container">
-    <div style="margin-right: 100px">
+    <div class="mb-5" style="margin-right: 100px">
         <h1 class="text-2xl">Food Items</h1>
 
         <div class="py-10">
@@ -25,8 +25,8 @@
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->category->name??null}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-wrap">{{$food->description}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
-                        <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$food->id}}">Edit</button>
-                        <button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$food->id}}">Delete</button>
+                        <button class="openModal text-blue-700 px-1" data-label="editFood" data-id="{{$food->id}}">Edit</button>
+                        <button class="openModal text-red-600 px-1" data-label="deleteFood" data-id="{{$food->id}}">Delete</button>
                     </td>
                 </tr>
                 @include('admin.food.modal-edit-delete')
@@ -34,9 +34,17 @@
             </tbody>
         </table>
 
+        <div class="mt-10">
+            {{ $foods->links() }}
+        </div>
+
         @include('admin.food.modal-add')
     </div>
+
     <div>
         @include('admin.ingredients.ingredients')
+        <div class="mt-10" style="z-index: -100">
+            {{ $ingredients->links() }}
+        </div>
     </div>
 </div>

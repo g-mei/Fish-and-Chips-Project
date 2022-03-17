@@ -1,7 +1,7 @@
 {{-- Edit Modal for User --}}
 <div class="container flex justify-center mx-auto hidden modal" id="edit#{{$user->id}}">
-    <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
-        <div class="max-w-xl p-6 bg-white rounded-md">
+    <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50" style="z-index: 90">
+        <div class="max-w-xl p-6 bg-white rounded-md" style="z-index: 100">
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl">Edit User</h3>
             </div>
@@ -30,8 +30,8 @@
 
 {{-- Delete Modal for User --}}
 <div class="container flex justify-center mx-auto hidden modal" id="delete#{{$user->id}}">
-    <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
-        <div class="max-w-sm p-6 bg-white rounded-md">
+    <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50" style="z-index: 90">
+        <div class="max-w-sm p-6 bg-white rounded-md" style="z-index: 100">
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl">Are you sure you want to delete "{{$user->name}}" from user?</h3>
             </div>

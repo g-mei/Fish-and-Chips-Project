@@ -8,7 +8,7 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     function index() {
-        $categories = Category::all();
+        $categories = Category::paginate(8);
         return view('admin.dashboard')->with('categories', $categories);
     }
 

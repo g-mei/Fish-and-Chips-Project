@@ -8,7 +8,7 @@ use App\Models\User;
 class UserController extends Controller
 {
     function index() {
-        $users = User::all()->where('role_id', 2);
+        $users = User::where('role_id', 2)->paginate(5);
         return view('admin.dashboard')->with('users', $users);
     }
 

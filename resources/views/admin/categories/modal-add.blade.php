@@ -1,7 +1,7 @@
 {{-- Add Modal for Categories --}}
 <div class="container justify-center mx-auto modal hidden" id="addModal">
-    <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50">
-        <div class="max-w-xl p-6 bg-white rounded-md">
+    <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50" style="z-index: 90">
+        <div class="max-w-xl p-6 bg-white rounded-md" style="z-index: 100">
             <div class="flex items-center justify-between">
                 <h3 class="text-2xl">Add Categories</h3>
             </div>

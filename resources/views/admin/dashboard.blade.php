@@ -16,8 +16,7 @@
         <x-app-layout></x-app-layout>
         @include('admin.sidebar')
 
-        <div class="absolute w-[100%] overflow-hidden min-h-screen" style="padding-left: 10rem">
-            <div class="mt-10" style="padding-left: 5rem">
+            <div class="mt-10 overflow-hidden min-h-screen container mx-auto">
                 @if (Route::is('categories'))
                     @include('admin.categories.categories')
                 @elseif(Route::is('food'))
@@ -38,7 +37,6 @@
                     <h1>Welcome to the dashboard!</h1>
                 @endif
             </div>
-        </div>
         @stack('modal')
     </body>
 </html>
