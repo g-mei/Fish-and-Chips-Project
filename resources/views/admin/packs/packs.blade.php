@@ -13,6 +13,7 @@
             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Name</th>
             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Cost</th>
             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Category</th>
+            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Items</th>
             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Description</th>
         </tr>
     </thead>
@@ -23,6 +24,11 @@
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->name}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->cost}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->category->name??null}}</td>
+            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+            	@foreach ($pack->foods as $food)
+            		{{$food->name}}
+            	@endforeach
+            </td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-wrap">{{$pack->description}}</td>
             <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                 <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$pack->id}}">Edit</button>
@@ -30,12 +36,6 @@
             </td>
         </tr>
         
-        <!-- temporary place for displaying food in the pack -->
-            <tr class="hover:bg-gray-50">
-                @foreach ($pack->foods as $food)
-                <td class="py-4 px-6 text-sm font-small text-gray-300 whitespace-nowrap">{{$food->name}}</td>
-                @endforeach
-            </tr>
         @include('admin.packs.modal-edit-delete')
         
     @endforeach

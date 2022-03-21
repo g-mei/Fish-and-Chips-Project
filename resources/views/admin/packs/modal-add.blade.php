@@ -42,7 +42,7 @@
                         <label for="foods" class="block font-bold text-gray-600">Foods</label>
                         @foreach ($foods as $food)
                             <div class="mr-1">
-                                <input type="checkbox" id="{{$food->id}}" name="{{$food->name}}" value="{{$food->name}}" />
+                                <input type="checkbox" id="{{$food->id}}" name="foods[]" value="{{$food->id}}" />
                                 <label for="{{$food->id}}">{{$food->name}}</label>
                             </div>
                         @endforeach

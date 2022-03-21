@@ -39,6 +39,13 @@ class PackController extends Controller
         }
         
         $pack->save();
+        
+        $foods = $request->input('foods');
+        if ($foods != null) {
+            foreach ($foods as $food) {
+                $pack->foods()->attach($food);
+            }
+        }
 
         return redirect('/dashboard/packs');
     }
@@ -62,6 +69,14 @@ class PackController extends Controller
         }
         
         $pack->save();
+        
+        $pack->foods()->detach();
+        $foods = $request->input('foods');
+        if ($foods != null) {
+            foreach ($foods as $food) {
+                $pack->foods()->attach($food);
+            }
+        }
 
         return redirect('/dashboard/packs');
     }
