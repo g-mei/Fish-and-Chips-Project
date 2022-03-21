@@ -16,7 +16,7 @@ class IngredientController extends Controller
         $ingredient->name = $request->input('name');
         $ingredient->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/food');
     }
 
     function editIngredient(Request $request, $id) {
@@ -27,13 +27,13 @@ class IngredientController extends Controller
         $ingredient = Ingredient::find($id);
         $ingredient->update(['name'=>$request->get('name')]);
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/food');
     }
 
     function deleteIngredient($id) {
         $ingredient= Ingredient::find($id);
         $ingredient->delete();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/food');
     }
 }

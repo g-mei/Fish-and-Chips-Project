@@ -15,6 +15,7 @@
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Name</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Cost</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Category</th>
+                    <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Ingredients</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Description</th>
                 </tr>
             </thead>
@@ -25,6 +26,11 @@
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->name}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->cost}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->category->name??null}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                        @foreach ($food->ingredients as $ingredient)
+                        	{{$ingredient->name}}
+                        @endforeach
+                    </td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-wrap">{{$food->description}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                         <button class="openModal text-blue-700 px-1" data-label="editFood" data-id="{{$food->id}}">Edit</button>

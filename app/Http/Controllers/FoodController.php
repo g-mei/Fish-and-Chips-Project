@@ -31,7 +31,7 @@ class FoodController extends Controller
         $food->cost = $request->input('cost');
         $food->description = $request->input('description');
         $food->category_id = $request->input('category');
-
+        
         if($request->hasFile('image')) {
             $image_name = $request->file('image')->getClientOriginalName();
             $request->file('image')->storeAs('public/image/food_items/', $image_name);
@@ -39,6 +39,13 @@ class FoodController extends Controller
         }
         
         $food->save();
+        
+        $ingredients = $request->input('ingredients');
+        if ($ingredients != null) {
+            foreach ($ingredients as $ingredient) {
+                $food->ingredients()->attach($ingredient);
+            }
+        }
 
         return redirect('/dashboard/food');
     }
