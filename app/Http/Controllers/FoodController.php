@@ -69,6 +69,14 @@ class FoodController extends Controller
         }
         
         $food->save();
+        
+        $food->ingredients()->detach();
+        $ingredients = $request->input('ingredients');
+        if ($ingredients != null) {
+            foreach ($ingredients as $ingredient) {
+                $food->ingredients()->attach($ingredient);
+            }
+        }
 
         return redirect('/dashboard/food');
     }
