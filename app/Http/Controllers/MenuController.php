@@ -12,10 +12,25 @@ class MenuController extends Controller
 {
     function index() {
         $categories = Category::all();
-        $foods = Food::all();
-        $packs = Pack::all();
         $ingredients = Ingredient::all();
-
+        
+        if (request()->category) {
+            $id = request()->query('category');
+            $category = Category::where('id', $id)->first();
+            
+            if (!(is_null($category))) {
+                $foods = $category->food()->get();
+                $packs = $category->pack()->get();
+            } else {                                            // default show all food if the category identified by the query string doesn't exist
+                $foods = Food::all();
+                $packs = Pack::all();
+            }
+            
+        } else {
+            $foods = Food::all();
+            $packs = Pack::all();
+        }
+        
         return view('menu')
             ->with('categories', $categories)
             ->with('foods', $foods)
