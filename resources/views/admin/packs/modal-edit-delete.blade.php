@@ -25,7 +25,7 @@
                         <select id="category" name="category" class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600">
                             <option value="">--- Select a Category ---</option>
                             @foreach ($categories as $category)
-                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                <option value="{{$category->id}}" {{($pack->category_id == $category->id) ? 'selected' : ''}}> {{$category->name}} </option>
                             @endforeach
                         </select>
                         
