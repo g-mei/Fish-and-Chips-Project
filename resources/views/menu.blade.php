@@ -22,7 +22,7 @@
                         @foreach ($categories as $category)
                         <li class="py-2"><a href="{{route('menu', ['category' => $category->id])}}">{{ $category->name }} ({{$category->food()->count()}})</a></li>   
                         @endforeach
-                        <li class="py-2"><a href="{{route('menu', ['category' => 'uncategorized'])}}">Uncategorized ({{$category->food()->count()}})</a></li>
+                        <li class="py-2"><a href="{{route('menu', ['category' => 'uncategorized'])}}">Uncategorized</a></li>
                         <li class="py-2"><a href="{{route('menu')}}">Show All</a></li>   
                     </ul>
                 </nav>

@@ -19,6 +19,7 @@ class MenuController extends Controller
             if ((request()->category) === 'uncategorized') {
                 $foods = DB::table('foods')->whereNull('category_id')->get();
                 $packs = DB::table('packs')->whereNull('category_id')->get();
+                
             } else {
                 $id = request()->query('category');
                 $category = Category::where('id', $id)->first();
@@ -37,10 +38,13 @@ class MenuController extends Controller
             $packs = Pack::all();
         }
         
+        $foodspacks = $foods->concat($packs);
+        
         return view('menu')
             ->with('categories', $categories)
             ->with('foods', $foods)
             ->with('packs', $packs)
-            ->with('ingredients', $ingredients);
+            ->with('ingredients', $ingredients)
+            ->with('foodspacks', $foodspacks);
     }
 }
