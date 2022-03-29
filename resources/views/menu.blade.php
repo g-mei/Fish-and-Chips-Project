@@ -18,22 +18,24 @@
                     <nav>
                         <ul>
                             @foreach ($categories as $category)
-                                <li class="py-2"><a href="{{route('menu', ['category' => $category->id])}}">{{ $category->name }}</a></li>   
+                            <li class="py-2"><a href="{{route('menu', ['category' => $category->id])}}">{{ $category->name }} ({{$category->food()->count()}})</a></li>   
                             @endforeach
+                            <li class="py-2"><a href="{{route('menu', ['category' => 'uncategorized'])}}">Uncategorized ({{$category->food()->count()}})</a></li>
+                            <li class="py-2"><a href="{{route('menu')}}">Show All</a></li>   
                         </ul>
                     </nav>
                 </aside>
 
                 <div class="grid lg:grid-cols-4 md:grid-cols-3">
                     @foreach ($foods as $food)
-                        <div class="bg-white shadow-sm mb-4 mr-3">
+                        <div class="bg-white shadow-sm mb-4 mr-3 max-w-[5rem]">
                             @if ($food->image)
                             <div class="flex justify-center">
-                                <img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 300px; height: 250px;">        
+                                <img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 500px; height: 250px;">        
                             </div>
                             @else
                             <div class="flex justify-center">
-                                <div class="bg-blue-400 flex justify-center items-center text-gray-600" style="width: 300px; height: 250px;">No Image</div>
+                                <div class="bg-blue-400 flex justify-center items-center text-gray-600" style="width: 500px; height: 250px;">No Image</div>
                             </div>
                             @endif
                             
@@ -44,14 +46,15 @@
                                 </div>
                                 
                                 @if ($food->description)
-                                    @if (Str::limit($food->description, 50))
-                                        <p>yo</p>
+                                    @if (Str::limit($food->description, 150))
+                                        <p class="text-sm break-words">{{Str::limit($food->description, 150)}}</p>
                                     @else
-                                        <p>w</p>
+                                        <p class="text-sm break-words">{{$food->description}}</p>
                                     @endif
-                                    
+                                    <br/>
+                                @else
+                                    <br/>
                                 @endif
-                                {{-- <p class="text-sm">{{$food->description}}</p> --}}
 
                                 <div class="flex justify-end items-end">
                                     <button>Add to Cart</button>
