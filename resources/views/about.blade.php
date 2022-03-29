@@ -12,7 +12,7 @@
     <body class="antialiased">
         <x-app-layout></x-app-layout>
         <div class="min-h-screen bg-gray-50">
-            <div class="flex justify-center items-center text-white" style="background-image: url('/img/banner.jpg'); background-position: center; height:300px; width:100%; background-repeat:no-repeat;">
+            <div class="flex justify-center items-center text-white" style="background-image: url('/img/image_2.jpg'); background-position: center; height:150px; width:100%; background-repeat:no-repeat;">
                 <h1 style="font-size: 3rem; font-weight:bold">ABOUT US</h1>
             </div>
 
