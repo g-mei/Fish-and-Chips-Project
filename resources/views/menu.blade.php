@@ -31,7 +31,7 @@
                         <div class="bg-white shadow-sm mb-4 mr-3 max-w-[5rem]">
                             @if ($foodpack->image)
                             <div class="flex justify-center">
-                                <img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 500px; height: 250px;">        
+                                <img src="{{ asset('storage/image/food_items/'.$foodpack->image) }}" alt="{{$foodpack->image}}" style="width: 500px; height: 250px;">        
                             </div>
                             @else
                             <div class="flex justify-center">
