@@ -14,11 +14,16 @@ class Food extends Model
         return $this->belongsTo(Category::class, 'category_id');
     }
     
+    public function orders(){
+        return $this->belongsToMany(Order::class, 'order_food')->withPivot('qty');
+    }
+    
     public function packs() {
         return $this->belongsToMany(Pack::class);
     }
     
     public function ingredients() {
-        return $this->belongsToMany(Ingredient::class);
+        return $this->HasMany(Ingredient::class);
     }
+    
 }

@@ -153,6 +153,9 @@
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
+                            <x-jet-nav-link href="{{ route('order') }}" :active="request()->routeIs('order')">
+                                    {{ __('Order') }}
+                            </x-jet-nav-link>
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
                                 <x-jet-dropdown align="right" width="48">

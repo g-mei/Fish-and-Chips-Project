@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FoodController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PackController;
 use App\Http\Controllers\IngredientController;
@@ -18,6 +19,8 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         // User & Profile...
         Route::get('/profile', [UserProfileController::class, 'show'])
                     ->name('profile.show');
+        
+        Route::get('/order', [OrderController::class, 'index'])->name('order');
     });
 
     //only admin can access these routes
