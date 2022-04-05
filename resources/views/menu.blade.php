@@ -27,21 +27,21 @@
                     </ul>
                 </nav>
             </aside>
-
             <div class="grid lg:grid-cols-4 md:grid-cols-3">
                 @foreach ($foods as $food)
+                    @include('add-cart-modal')
                     <div class="mb-4 mr-3 hover:bg-white hover:shadow-md" style="max-height: 500px">
                         @if ($food->image)
                         <div class="flex justify-center">
                             <div class="relative">
-                                <a href=""><i class="fa fa-plus fa-3x absolute" style="right: 0.25rem; top:0.25rem; color:white;" aria-hidden="true"></i></a>
+                                <i class="fa fa-plus fa-3x absolute openModal" style="right: 0.25rem; top:0.25rem; color:white;" aria-hidden="true" data-id="{{$food->id}}"></i>
                                 <img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 500px; height: 250px;"> 
                             </div>
                         </div>
                         @else
                         <div class="flex justify-center">
                             <div class="bg-blue-400 relative" style="width:100%; height: 250px;">
-                                <a href=""><i class="fa fa-plus fa-3x absolute" style="right: 0.25rem; top:0.25rem; color:white;" aria-hidden="true"></i></a>
+                                <i class="fa fa-plus fa-3x absolute openModal" style="right: 0.25rem; top:0.25rem; color:white;" data-id="{{$food->id}}"></i>
                                 <div class="text-gray-600 flex justify-center" style="margin-top:100px">
                                     <p>{{$food->name}}</p>
                                 </div>
@@ -67,9 +67,10 @@
                                 <br/>
                             @endif
                         </div>
-                    </div>   
+                    </div>
                 @endforeach
             </div>
         </section>
+        <script type="text/javascript" src="{{URL::asset('js/cart.js')}}"></script>
     </body>
 </html>
