@@ -17,7 +17,10 @@
             </div>
 
             <div style="padding:5rem;">
+                
+                @isset($order)
                 <div class="text-center">
+                
                     <h2 class="text-xl font-bold mb-4">Order</h2>
                     <p>Order ID: {{$order->id}}</p>
                     <p>Instructions: {{$order->instructions}}</p>
@@ -26,12 +29,16 @@
                     <p>Review desc: {{$order->review}}</p>
                     <p>Rating: {{$order->review_rate}}</p>
                 </div>
+                @endisset
                 
                 <div class="text-center">
                 <br>
+                
+                @isset($foods)
                 @foreach ($foods as $food)
                 	<p>{{$food->pivot->qty}}x {{$food->name}}, ${{$food->pivot->qty * $food->cost}}</p>
                 @endforeach
+                @endisset
                 
                 <b>Subtotal: {{$totalcost}}</b>
                 </div>

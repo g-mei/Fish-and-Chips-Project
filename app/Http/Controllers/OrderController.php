@@ -16,12 +16,16 @@ class OrderController extends Controller
     {
         $uid = auth()->user()->id;
         $order = Order::where('user_id', $uid)->first();
-        $foods = $order->foods()->get();
-        
+        $foods = null;
         $totalcost = 0;
-        foreach ($foods as $food) {
-            $cost = $food->pivot->qty * $food->cost;
-            $totalcost += $cost;
+        
+        if(!empty($order)) {
+            $foods = $order->foods()->get();
+            
+            foreach ($foods as $food) {
+                $cost = $food->pivot->qty * $food->cost;
+                $totalcost += $cost;
+            }
         }
         
         return view('order')
