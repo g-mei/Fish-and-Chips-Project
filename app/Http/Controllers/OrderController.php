@@ -18,9 +18,16 @@ class OrderController extends Controller
         $order = Order::where('user_id', $uid)->first();
         $foods = $order->foods()->get();
         
+        $totalcost = 0;
+        foreach ($foods as $food) {
+            $cost = $food->pivot->qty * $food->cost;
+            $totalcost += $cost;
+        }
+        
         return view('order')
         ->with('order', $order)
-        ->with('foods', $foods);
+        ->with('foods', $foods)
+        ->with('totalcost', $totalcost);
     }
 
     /**

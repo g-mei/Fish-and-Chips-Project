@@ -30,8 +30,10 @@
                 <div class="text-center">
                 <br>
                 @foreach ($foods as $food)
-                	<p>{{$food->pivot->qty}}x {{$food->name}}</p>
+                	<p>{{$food->pivot->qty}}x {{$food->name}}, ${{$food->pivot->qty * $food->cost}}</p>
                 @endforeach
+                
+                <b>Subtotal: {{$totalcost}}</b>
                 </div>
             </div>
         </div>
