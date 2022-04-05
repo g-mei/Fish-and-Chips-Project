@@ -41,6 +41,7 @@ class MenuController extends Controller
             $packs = Pack::all();
         }
         
+//         $foodspacks = $foods->concat($packs)->sortBy('name');
         $foodspacks = $foods->concat($packs);
         
         return view('menu')
