@@ -17,25 +17,29 @@
             </div>
 
             <div style="padding:5rem;">
-                <div class="text-center">
-                    <h2 class="text-xl font-bold mb-4">Order</h2>
-                    <p>Order ID: {{$order->id}}</p>
-                    <p>Instructions: {{$order->instructions}}</p>
-                    <p>Status: {{$order->status}}</p>
-                    <p>Review title: {{$order->review_title}}</p>
-                    <p>Review desc: {{$order->review}}</p>
-                    <p>Rating: {{$order->review_rate}}</p>
-                </div>
-                
-                <div class="text-center">
-                <br>
-                @foreach ($foods as $food)
-                	<p>{{$food->pivot->qty}}x {{$food->name}}, ${{$food->pivot->qty * $food->cost}}</p>
-                @endforeach
-                
-                <b>Subtotal: {{$totalcost}}</b>
-                </div>
-            </div>
+                @if($order)
+                        <div class="text-center">
+                            <h2 class="text-xl font-bold mb-4">Order</h2>
+                            <p>Order ID: {{$order->id}}</p>
+                            <p>Instructions: {{$order->instructions}}</p>
+                            <p>Status: {{$order->status}}</p>
+                            <p>Review title: {{$order->review_title}}</p>
+                            <p>Review desc: {{$order->review}}</p>
+                            <p>Rating: {{$order->review_rate}}</p>
+                        </div>
+                        
+                        <div class="text-center">
+                        <br>
+                        @foreach ($foods as $food)
+                            <p>{{$food->pivot->qty}}x {{$food->name}}, ${{$food->pivot->qty * $food->cost}}</p>
+                        @endforeach
+                        
+                        <b>Subtotal: {{$totalcost}}</b>
+                    </div>
+                @else
+                    <p>Your Cart is Empty!</p>
+                @endif
+            </div>    
         </div>
     </body>
 </html>
