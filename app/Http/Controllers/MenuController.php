@@ -8,12 +8,15 @@ use App\Models\Category;
 use App\Models\Food;
 use App\Models\Pack;
 use App\Models\Ingredient;
+use App\Models\Order;
 
 class MenuController extends Controller
 {
     function index() {
+        $uid = auth()->user()->id;
         $categories = Category::all();
         $ingredients = Ingredient::all();
+        $orders = Order::all()->where('user_id', $uid);
         
         if (request()->category) {
             if ((request()->category) === 'uncategorized') {
@@ -45,6 +48,7 @@ class MenuController extends Controller
             ->with('foods', $foods)
             ->with('packs', $packs)
             ->with('ingredients', $ingredients)
-            ->with('foodspacks', $foodspacks);
+            ->with('foodspacks', $foodspacks)
+            ->with('orders', $orders);
     }
 }
