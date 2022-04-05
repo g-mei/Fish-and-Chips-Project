@@ -46,6 +46,24 @@ return new class extends Migration
             ->onDelete('cascade');
         });
         
+        Schema::create('order_pack', function (Blueprint $table) {
+            $table->id();
+            $table->timestamps();
+            $table->integer('qty');
+            
+            $table->unsignedBigInteger('order_id');
+            $table->foreign('order_id')
+            ->references('id')
+            ->on('orders')
+            ->onDelete('cascade');
+            
+            $table->unsignedBigInteger('pack_id');
+            $table->foreign('pack_id')
+            ->references('id')
+            ->on('packs')
+            ->onDelete('cascade');
+        });
+        
         Schema::create('food_pack', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
@@ -88,48 +106,70 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('orders', function (Blueprint $table) {
-            $table->dropForeign('orders_user_id_foreign');
-            $table->dropColumn('user_id');
-        });
         
-        Schema::table('foods', function (Blueprint $table) {
-            $table->dropForeign('foods_category_id_foreign');
-            $table->dropColumn('category_id');
-        });
+        if (Schema::hasTable('orders')) {
+            Schema::table('orders', function (Blueprint $table) {
+                $table->dropForeign('orders_user_id_foreign');
+                $table->dropColumn('user_id');
+            });
+        }
         
-        Schema::table('packs', function (Blueprint $table) {
-            $table->dropForeign('packs_category_id_foreign');
-            $table->dropColumn('category_id');
-        });
+        if (Schema::hasTable('foods')) {
+            Schema::table('foods', function (Blueprint $table) {
+                $table->dropForeign('foods_category_id_foreign');
+                $table->dropColumn('category_id');
+            });
+        }
         
-        Schema::table('order_food', function (Blueprint $table) {
-            $table->dropForeign('order_food_order_id_foreign');
-            $table->dropColumn('order_id');
-            $table->dropForeign('order_food_food_id_foreign');
-            $table->dropColumn('food_id');
-        });
+        if (Schema::hasTable('packs')) {
+            Schema::table('packs', function (Blueprint $table) {
+                $table->dropForeign('packs_category_id_foreign');
+                $table->dropColumn('category_id');
+            });
+        }
         
-        Schema::table('food_pack', function (Blueprint $table) {
-            $table->dropForeign('food_pack_food_id_foreign');
-            $table->dropColumn('food_id');
-            $table->dropForeign('food_pack_pack_id_foreign');
-            $table->dropColumn('pack_id');
-        });
+        if (Schema::hasTable('order_food')) {
+            Schema::table('order_food', function (Blueprint $table) {
+                $table->dropForeign('order_food_order_id_foreign');
+                $table->dropColumn('order_id');
+                $table->dropForeign('order_food_food_id_foreign');
+                $table->dropColumn('food_id');
+            });
+        }
         
-        Schema::table('food_ingredient', function (Blueprint $table) {
-            $table->dropForeign('food_ingredient_food_id_foreign');
-            $table->dropColumn('food_id');
-            $table->dropForeign('food_ingredient_ingredient_id_foreign');
-            $table->dropColumn('ingredient_id');
-        });
+        if (Schema::hasTable('order_pack')) {
+            Schema::table('order_pack', function (Blueprint $table) {
+                $table->dropForeign('order_pack_order_id_foreign');
+                $table->dropColumn('order_id');
+                $table->dropForeign('order_pack_pack_id_foreign');
+                $table->dropColumn('pack_id');
+            });
+        }
         
-        Schema::dropIfExists('order_food');
+        if (Schema::hasTable('food_pack')) {
+            Schema::table('food_pack', function (Blueprint $table) {
+                $table->dropForeign('food_pack_food_id_foreign');
+                $table->dropColumn('food_id');
+                $table->dropForeign('food_pack_pack_id_foreign');
+                $table->dropColumn('pack_id');
+            });
+        }
+        
+        if (Schema::hasTable('food_ingredient')) {
+            Schema::table('food_ingredient', function (Blueprint $table) {
+                $table->dropForeign('food_ingredient_food_id_foreign');
+                $table->dropColumn('food_id');
+                $table->dropForeign('food_ingredient_ingredient_id_foreign');
+                $table->dropColumn('ingredient_id');
+            });
+        }
+        
         Schema::dropIfExists('food_pack');
         Schema::dropIfExists('food_ingredient');
-        Schema::dropIfExists('orders_foods');
-        Schema::dropIfExists('foods_packs');
-        Schema::dropIfExists('foods_ingredients');
+        Schema::dropIfExists('order_food');
+        Schema::dropIfExists('order_pack');
+        Schema::dropIfExists('food_pack');
+        Schema::dropIfExists('food_ingredient');
         
     }
 };

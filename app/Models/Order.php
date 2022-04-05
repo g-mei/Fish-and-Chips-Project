@@ -14,6 +14,6 @@ class Order extends Model
     }
     
     public function packs(){
-        return $this->hasMany(Pack::class);
+        return $this->belongsToMany(Pack::class, 'order_pack')->withPivot('qty');
     }
 }
