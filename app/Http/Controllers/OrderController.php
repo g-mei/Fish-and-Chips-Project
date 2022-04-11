@@ -61,7 +61,10 @@ class OrderController extends Controller
             
             //adds the item in order_food
             $order->foods()->attach([ $id =>
-                ['qty' => $request->qty]
+                [
+                    'qty' => $request->qty,
+                    'instructions' => $request->instructions
+                ]
            ]);
 
           } else {
@@ -74,8 +77,11 @@ class OrderController extends Controller
 
             //adding the items in the foreign table -> order_food
             $order->foods()->attach([ $id =>
-                ['qty' => $request->qty]
-                ]);
+                [
+                    'qty' => $request->qty,
+                    'instructions' => $request->instructions
+                ]
+            ]);
           }
 
           return redirect('/menu');

@@ -15,7 +15,7 @@ class Food extends Model
     }
     
     public function orders(){
-        return $this->belongsToMany(Order::class, 'order_food')->withPivot('qty');
+        return $this->belongsToMany(Order::class, 'order_food')->withPivot('qty', 'instructions');
     }
     
     public function packs() {
@@ -23,7 +23,7 @@ class Food extends Model
     }
     
     public function ingredients() {
-        return $this->HasMany(Ingredient::class);
+        return $this->belongsToMany(Ingredient::class);
     }
     
 }

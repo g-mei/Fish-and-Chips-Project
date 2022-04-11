@@ -33,16 +33,19 @@ class OrderSeeder extends Seeder
         DB::table('order_food')->insert([
             [
                 'qty' => 1,
+                'instructions' => 'well cooked',
                 'order_id' => 1,
-                'food_id' => 2
+                'food_id' => 2,
             ],
             [
                 'qty' => 2,
+                'instructions' => 'packed separate',
                 'order_id' => 1,
                 'food_id' => 2
             ],
             [
                 'qty' => 1,
+                'instructions' => null,
                 'order_id' => 1,
                 'food_id' => 1
             ],

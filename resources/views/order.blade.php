@@ -34,16 +34,33 @@
                 <br>
                 
                 @isset($foods)
-                @foreach ($foods as $food)
-                	<p>{{$food->pivot->qty}}x {{$food->name}}, ${{$food->pivot->qty * $food->cost}}</p>
-                @endforeach
+                <table class="bg-gray-100">
+                <thead>
+                	<tr>
+                		<th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Food</th>
+                		<th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">QTY</th>
+                		<th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Cost</th>
+                		<th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Instructions</th>
+                	</tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                    @foreach ($foods as $food)
+                    <tr class="hover:bg-gray-100">
+                    	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->name}}</td>
+                    	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->qty}}</td>
+                    	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->qty * $food->cost}}</td>
+                    	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->instructions}}</td>
+                    </tr>
+                    @endforeach
+                </tbody>
+                </table>
                 @endisset
                 
                 @if(!$order)
                     <p class="mb-5">Your cart is empty!</p>
                 @endif
 
-                <b>Subtotal: {{$totalcost}}</b>
+                <b>Subtotal: ${{$totalcost}}</b>
                 </div>
             </div>
         </div>

@@ -10,10 +10,10 @@ class Order extends Model
     use HasFactory;
     
     public function foods(){
-        return $this->belongsToMany(Food::class, 'order_food')->withPivot('qty');
+        return $this->belongsToMany(Food::class, 'order_food')->withPivot('qty', 'instructions');
     }
     
     public function packs(){
-        return $this->belongsToMany(Pack::class, 'order_pack')->withPivot('qty');
+        return $this->belongsToMany(Pack::class, 'order_pack')->withPivot('qty', 'instructions');
     }
 }

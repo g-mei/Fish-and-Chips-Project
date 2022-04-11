@@ -32,6 +32,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('qty');
+            $table->string('instructions')->nullable();
             
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')
@@ -50,6 +51,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->integer('qty');
+            $table->string('instructions')->nullable();
             
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')
