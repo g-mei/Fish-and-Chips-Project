@@ -6,7 +6,7 @@
                 <h3 class="text-2xl">{{$food->name}}</h3>
                 <p>${{$food->cost}}</p>
             </div>
-            <form class="mt-5" action="{{route('addToCart')}}" method="POST">
+            <form class="mt-5" action="{{route('addToCart', ['id' => $food->id])}}" method="POST">
                 @csrf
                 <label for="qty" class="block font-bold text-gray-600">Qty</label>
                 <input type="number" name="qty" id="qty"

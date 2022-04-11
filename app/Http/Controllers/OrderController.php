@@ -16,12 +16,16 @@ class OrderController extends Controller
     {
         $uid = auth()->user()->id;
         $order = Order::where('user_id', $uid)->first();
-        $foods = $order->foods()->get();
-        
+        $foods = null;
         $totalcost = 0;
-        foreach ($foods as $food) {
-            $cost = $food->pivot->qty * $food->cost;
-            $totalcost += $cost;
+        
+        if(!empty($order)) {
+            $foods = $order->foods()->get();
+            
+            foreach ($foods as $food) {
+                $cost = $food->pivot->qty * $food->cost;
+                $totalcost += $cost;
+            }
         }
         
         return view('order')
@@ -46,9 +50,40 @@ class OrderController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+      if (auth()->user()){
+
+          //checks if user has an existing order
+          $order = Order::where('user_id', auth()->user()->id)->first();
+
+          if($order && $order->status === 'waiting') {
+            
+            //adds the item in order_food
+            $order->foods()->attach([ $id =>
+                ['qty' => $request->qty]
+           ]);
+
+          } else {
+            //create a new order in the orders table
+            $order = new Order;
+            $order->user_id = auth()->user()->id;
+            $order->status = "waiting";
+            $order->save();
+
+
+            //adding the items in the foreign table -> order_food
+            $order->foods()->attach([ $id =>
+                ['qty' => $request->qty]
+                ]);
+          }
+
+          return redirect('/menu');
+
+      } else {
+          //user needs to login to place order
+          return redirect('/login');
+      }
     }
 
     /**

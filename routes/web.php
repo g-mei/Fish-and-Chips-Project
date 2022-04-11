@@ -22,7 +22,7 @@ Route::get('/', function () {
 })->name('/');
 
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
-Route::post('/menu', [OrderController::class, 'store'])->name('addToCart');
+Route::post('/menu/{id}', [OrderController::class, 'store'])->name('addToCart');
 
 Route::get('/about', function () {
     return view('about');

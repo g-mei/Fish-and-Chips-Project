@@ -13,10 +13,18 @@ use App\Models\Order;
 class MenuController extends Controller
 {
     function index() {
-        $uid = auth()->user()->id;
+
+
+        //needs to check if user is logged in, as there is no order existing
+        $orders = null;
+
+        if(auth()->user()) {
+            $uid = auth()->user()->id;
+            $orders = Order::all()->where('user_id', $uid);
+        }
+        
         $categories = Category::all();
         $ingredients = Ingredient::all();
-        $orders = Order::all()->where('user_id', $uid);
         
         if (request()->category) {
             if ((request()->category) === 'uncategorized') {
