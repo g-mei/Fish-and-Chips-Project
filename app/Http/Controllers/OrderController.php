@@ -75,7 +75,7 @@ class OrderController extends Controller
             //adding the items in the foreign table -> order_food
             $order->foods()->attach([ $id =>
                 ['qty' => $request->qty]
-                ]);
+            ]);
           }
 
           return redirect('/menu');
