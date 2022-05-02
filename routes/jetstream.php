@@ -21,6 +21,8 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
                     ->name('profile.show');
         
         Route::get('/order', [OrderController::class, 'index'])->name('order');
+        Route::put('/order/{id}', [OrderController::class, 'editOrderItem'])->name('editOrderItem');
+        Route::delete('/order/{id}', [OrderController::class, 'deleteOrderItem'])->name('deleteOrderItem');
     });
 
     //only admin can access these routes

@@ -3,15 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Food;
 use App\Models\Order;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $uid = auth()->user()->id;
@@ -34,22 +30,7 @@ class OrderController extends Controller
         ->with('totalcost', $totalcost);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+    // Add food into order
     public function store(Request $request, $id)
     {
       if (auth()->user()){
@@ -92,6 +73,7 @@ class OrderController extends Controller
       }
     }
 
+    // Add pack into order
     public function storePack(Request $request, $id)
     {
       if (auth()->user()){
@@ -134,48 +116,32 @@ class OrderController extends Controller
       }
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    // edit order
+    public function edit() {
+        
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
+    
+    // edit order item
+    public function editOrderItem(Request $request, $id) {
+        $this->validate($request, [
+            'qty' => 'required'
+        ]);
+        
+        $uid = auth()->user()->id;
+        $order = Order::where('user_id', $uid)->first();
+        $order->foods()->wherePivot('id', $id)->update([
+            'qty' => $request->qty,
+            'instructions' => $request->instructions
+        ]);
+        
+        return redirect('/order');
     }
+    
+    public function deleteOrderItem($id) {
+        $uid = auth()->user()->id;
+        $order = Order::where('user_id', $uid)->first();
+        $order->foods()->wherePivot('id', $id)->detach();
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return redirect('/order');
     }
 }

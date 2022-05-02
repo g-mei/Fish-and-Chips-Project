@@ -19,7 +19,6 @@
             <div style="padding:5rem;">
                 @isset($order)
                 <div class="text-center">
-                
                     <h2 class="text-xl font-bold mb-4">Order</h2>
                     <p>Order ID: {{$order->id}}</p>
                     <p>Instructions: {{$order->instructions}}</p>
@@ -45,12 +44,18 @@
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                     @foreach ($foods as $food)
-                    <tr class="hover:bg-gray-100">
-                    	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->name}}</td>
-                    	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->qty}}</td>
-                    	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->qty * $food->cost}}</td>
-                    	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->instructions}}</td>
-                    </tr>
+                    
+                        <tr class="hover:bg-gray-100">
+                        	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->name}}</td>
+                        	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->qty}}</td>
+                        	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->qty * $food->cost}}</td>
+                        	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->instructions}}</td>
+                        	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$food->pivot->id}}">Edit {{$food->pivot->id}}</button>
+                    			<button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$food->pivot->id}}">Delete {{$food->pivot->id}}</button>            
+                            </td>
+                        </tr>
+                        @include('order-edit-delete-modal')
                     @endforeach
                 </tbody>
                 </table>
