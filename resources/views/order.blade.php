@@ -69,5 +69,7 @@
                 </div>
             </div>
         </div>
+        
+        @stack('modal')
     </body>
 </html>

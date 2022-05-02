@@ -18,7 +18,7 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
-        <script src="{{URL::asset('js/modal.js')}}" defer></script>
+<!--         <script src="{{URL::asset('js/modal.js')}}" defer></script> -->
         
     </head>
     <body class="font-sans antialiased">
@@ -42,9 +42,9 @@
             </main>
         </div>
 
-<!--         @push('modal') -->
-<!--             <script type="text/javascript" src="{{URL::asset('js/modal.js')}}"></script> -->
-<!--         @endpush -->
+        @push('modal')
+            <script type="text/javascript" src="{{URL::asset('js/modal.js')}}"></script>
+        @endpush
         
         @livewireScripts
     </body>
