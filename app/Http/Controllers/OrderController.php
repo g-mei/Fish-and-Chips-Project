@@ -14,12 +14,19 @@ class OrderController extends Controller
         $order = Order::where('user_id', $uid)->first();
         $foods = null;
         $totalcost = 0;
+        $packs = null;
         
         if(!empty($order)) {
             $foods = $order->foods()->get();
+            $packs = $order->packs()->get();
             
             foreach ($foods as $food) {
                 $cost = $food->pivot->qty * $food->cost;
+                $totalcost += $cost;
+            }
+
+            foreach ($packs as $pack) {
+                $cost = $pack->pivot->qty * $pack->cost;
                 $totalcost += $cost;
             }
         }
@@ -27,6 +34,7 @@ class OrderController extends Controller
         return view('order')
         ->with('order', $order)
         ->with('foods', $foods)
+        ->with('packs', $packs)
         ->with('totalcost', $totalcost);
     }
 
@@ -141,6 +149,30 @@ class OrderController extends Controller
         $uid = auth()->user()->id;
         $order = Order::where('user_id', $uid)->first();
         $order->foods()->wherePivot('id', $id)->detach();
+
+        return redirect('/order');
+    }
+
+    //pack functions edit and delete
+    public function editPackOrderItem(Request $request, $id) {
+        $this->validate($request, [
+            'qty' => 'required'
+        ]);
+        
+        $uid = auth()->user()->id;
+        $order = Order::where('user_id', $uid)->first();
+        $order->packs()->wherePivot('id', $id)->update([
+            'qty' => $request->qty,
+            'instructions' => $request->instructions
+        ]);
+        
+        return redirect('/order');
+    }
+
+    public function deletePackOrderItem($id) {
+        $uid = auth()->user()->id;
+        $order = Order::where('user_id', $uid)->first();
+        $order->packs()->wherePivot('id', $id)->detach();
 
         return redirect('/order');
     }
