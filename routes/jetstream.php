@@ -22,6 +22,7 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         
         Route::get('/order', [OrderController::class, 'index'])->name('order');
         Route::put('/order/{id}', [OrderController::class, 'editOrderItem'])->name('editOrderItem');
+        Route::put('/order/submit/{id}', [OrderController::class, 'submitOrder'])->name('submitOrder');
         Route::delete('/order/{id}', [OrderController::class, 'deleteOrderItem'])->name('deleteOrderItem');
 
         //pack edit and delete routes

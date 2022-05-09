@@ -176,4 +176,13 @@ class OrderController extends Controller
 
         return redirect('/order');
     }
+    
+    //submit order to restaurant
+    public function submitOrder($id) {
+        $order = Order::where('id', $id)->first();
+        $order->status = 'waiting';
+        $order->save();
+        
+        return redirect('/order');
+    }
 }

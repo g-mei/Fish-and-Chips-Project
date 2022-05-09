@@ -13,7 +13,7 @@
         <x-app-layout></x-app-layout>
         <div class="min-h-screen bg-gray-50">
             <div class="flex justify-center items-center text-white" style="background-image: url('/img/image_2.jpg'); background-position: center; height:150px; width:100%; background-repeat:no-repeat;">
-                <h1 style="font-size: 3rem; font-weight:bold">Cart</h1>
+                <h1 style="font-size: 3rem; font-weight:bold">Order</h1>
             </div>
 
             <div style="padding:5rem;">                
@@ -61,7 +61,6 @@
                             @endisset
                         </tbody>
                         </table>
-                    
 
                     <br/>
                     
@@ -70,7 +69,13 @@
                     @endif
 
                     <p class=""><b>Subtotal: ${{$totalcost}}</b></p>
-                </div>
+                    
+                    <div class="py-5">
+                        <button type="button" class="openModal bg-blue-600 px-2 py-2 rounded-md text-white hover:shadow-md" data-label="submit" data-id="{{$order->id}}">Submit</button>
+                    </div>
+                    @include('order-submit-modal')
+                    
+                </div>        
             </div>
         </div>
         
