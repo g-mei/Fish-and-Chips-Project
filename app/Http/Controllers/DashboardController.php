@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Food;
+use App\Models\Order;
 
 class DashboardController extends Controller
 {
@@ -54,7 +55,10 @@ class DashboardController extends Controller
 // Orders ================================================================
 
     function viewOrders() {
-        return view('admin.dashboard');
+        $orders = Order::whereIn('status', ['waiting','cooking'])->get();
+        
+        return view('admin.dashboard')
+        ->with('orders', $orders);;
     }
 
     function viewOrderHistory() {

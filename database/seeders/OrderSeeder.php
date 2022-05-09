@@ -18,7 +18,7 @@ class OrderSeeder extends Seeder
         DB::table('orders')->insert([
             [
                 'instructions' => 'No salt',
-                'status' => 'waiting',
+                'status' => 'incart',
                 'review_title' => 'review title',
                 'review_desc' => 'review description',
                 'review_rate' => 5,

@@ -46,7 +46,7 @@ class OrderController extends Controller
           //checks if user has an existing order
           $order = Order::where('user_id', auth()->user()->id)->first();
 
-          if($order && $order->status === 'waiting') {
+          if($order && $order->status === 'incart') {
             
             //adds the item in order_food
             $order->foods()->attach([ $id =>
@@ -60,7 +60,7 @@ class OrderController extends Controller
             //create a new order in the orders table
             $order = new Order;
             $order->user_id = auth()->user()->id;
-            $order->status = "waiting";
+            $order->status = "incart";
             $order->save();
 
 
@@ -89,7 +89,7 @@ class OrderController extends Controller
           //checks if user has an existing order
           $order = Order::where('user_id', auth()->user()->id)->first();
 
-          if($order && $order->status === 'waiting') {
+          if($order && $order->status === 'incart') {
             
             //adds the item in order_pack
             $order->packs()->attach([ $id =>
@@ -103,7 +103,7 @@ class OrderController extends Controller
             //create a new order in the orders table
             $order = new Order;
             $order->user_id = auth()->user()->id;
-            $order->status = "waiting";
+            $order->status = "incart";
             $order->save();
 
 

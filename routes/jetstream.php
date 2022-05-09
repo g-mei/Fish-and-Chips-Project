@@ -55,7 +55,7 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         Route::post('/dashboard/packs',[PackController::class, 'addPack'])->name('addPack');
         Route::put('/dashboard/packs/{id}',[PackController::class, 'editPack'])->name('editPack');
         Route::delete('/dashboard/packs/{id}',[PackController::class, 'deletePack'])->name('deletePack');
-        
+       
         //User Routes
         Route::get('/dashboard/users',[UserController::class, 'index'])->name('users');
         Route::put('/dashboard/users/{id}',[UserController::class, 'editUser'])->name('editUser');
