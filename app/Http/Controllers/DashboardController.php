@@ -58,11 +58,14 @@ class DashboardController extends Controller
         $orders = Order::whereIn('status', ['waiting','cooking'])->get();
         
         return view('admin.dashboard')
-        ->with('orders', $orders);;
+        ->with('orders', $orders);
     }
 
     function viewOrderHistory() {
-        return view('admin.dashboard');
+        $orders = Order::whereIn('status', ['done'])->get();
+        
+        return view('admin.dashboard')
+        ->with('orders', $orders);
     }
     
 // Users =================================================================
