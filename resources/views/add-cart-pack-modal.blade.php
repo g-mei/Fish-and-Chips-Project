@@ -13,7 +13,7 @@
                     class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                     min="1" value="1" required>
                     
-                <label for="qty" class="block font-bold text-gray-600">Instructions</label>
+                <label for="instructions" class="block font-bold text-gray-600">Instructions</label>
                 <input type="text" name="instructions" id="instructions"
                     class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600">
 
