@@ -28,6 +28,9 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         //pack edit and delete routes
         Route::put('/order/pack/{id}', [OrderController::class, 'editPackOrderItem'])->name('editPackOrderItem');
         Route::delete('/order/pack/{id}', [OrderController::class, 'deletePackOrderItem'])->name('deletePackOrderItem');
+
+        //display order history page
+        Route::get('/order-history', [OrderController::class, 'viewOrderHistory'])->name('order-history');
     });
 
     //only admin can access these routes

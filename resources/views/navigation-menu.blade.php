@@ -154,7 +154,7 @@
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <x-jet-nav-link href="{{ route('order') }}" :active="request()->routeIs('order')">
-                                    {{ __('Order') }}
+                                    {{ __('Cart') }}
                             </x-jet-nav-link>
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
@@ -174,6 +174,10 @@
                                     <x-slot name="content">
                                         <x-jet-dropdown-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                                             {{ __('Profile') }}
+                                        </x-jet-dropdown-link>
+
+                                        <x-jet-dropdown-link href="{{ route('order-history') }}" :active="request()->routeIs('order-history')">
+                                            {{ __('Order History') }}
                                         </x-jet-dropdown-link>
 
                                         <div class="border-t border-blue-100"></div>
@@ -222,11 +226,14 @@
                     <!-- Responsive Settings Options -->
                     <div class="pt-4 pb-1 border-t border-blue-200">
                         <x-jet-responsive-nav-link href="{{ route('order') }}" :active="request()->routeIs('order')">
-                                    {{ __('Order') }}
+                                    {{ __('Cart') }}
                         </x-jet-responsive-nav-link>
                         <div class="mt-3 space-y-1">
                             <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                                 {{ __('Profile') }}
+                            </x-jet-responsive-nav-link>
+                            <x-jet-responsive-nav-link href="{{ route('order-history') }}" :active="request()->routeIs('order-history')">
+                                {{ __('Order History') }}
                             </x-jet-responsive-nav-link>
 
                             <!-- Authentication -->

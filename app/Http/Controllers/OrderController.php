@@ -186,4 +186,11 @@ class OrderController extends Controller
         
         return redirect('/order');
     }
+
+    //view order history page
+    public function viewOrderHistory() {
+        return view('order-history');
+    }
+
 }
+

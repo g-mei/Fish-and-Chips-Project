@@ -12,7 +12,7 @@
     <body>
             <x-app-layout></x-app-layout>
             <div class="flex justify-center items-center text-white" style="background-image: url('/img/image_2.jpg'); background-position: center; height:150px; width:100%; background-repeat:no-repeat;">
-                <h1 style="font-size: 3rem; font-weight:bold">Order</h1>
+                <h1 style="font-size: 3rem; font-weight:bold">Cart</h1>
             </div>
 
             <section>
