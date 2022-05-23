@@ -64,17 +64,18 @@
 
                     <br/>
 
-                    @if(!$order)
+                    @if($order)
+                    	<p class=""><b>Subtotal: ${{$totalcost}}</b></p>
+
+                        <div class="py-5 flex justify-end items-center">
+                            <button type="button" class="openModal bg-blue-600 px-2 py-2 rounded-md text-white hover:shadow-md" data-label="submit" data-id="{{$order->id}}">Submit Order To Restaurant</button>
+                        </div>
+                        @include('order-submit-modal')
+                    @else
                         <p class="mb-5">Your cart is empty!</p>
                     @endif
 
-                    <p class=""><b>Subtotal: ${{$totalcost}}</b></p>
-
-                    <div class="py-5 flex justify-end items-center">
-                        <button type="button" class="openModal bg-blue-600 px-2 py-2 rounded-md text-white hover:shadow-md" data-label="submit" data-id="{{$order->id}}">Submit Order To Restaurant</button>
-                    </div>
-
-                    @include('order-submit-modal')
+                    
                 </div>
         </section>
         
