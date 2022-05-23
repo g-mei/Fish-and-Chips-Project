@@ -2,7 +2,7 @@
 
 <div class="responsive-container">
     <div class="mb-5" style="margin-right: 100px">
-        <h1 class="text-2xl">Orders</h1>
+        <h1 class="text-2xl">Current Orders</h1>
 
         <table class="bg-gray-100">
             <thead>
@@ -10,6 +10,8 @@
                 	<th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">User</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Status</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Instructions</th>
+                    <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Items</th>
+                    <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Subtotal</th>
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
@@ -18,6 +20,11 @@
                 	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->status}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                        @foreach ($order->foods as $food) {{$food->pivot->qty}}x {{$food->name}}<br> @endforeach
+                        @foreach ($order->packs as $pack) {{$pack->pivot->qty}}x {{$pack->name}} @endforeach
+                    </td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">---</td>
                 </tr>
             @endforeach
             </tbody>

@@ -17,7 +17,7 @@
 
         <section>            
         	<br>
-            <div class="text-center flex flex-col justify-center items-center">
+            <div class="flex flex-col justify-center items-center">
             
                 <h1 class="text-2xl">Orders in Progress</h1>
                 <table class="bg-gray-100">
@@ -25,6 +25,7 @@
                         <tr>
                             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Created</th>
                             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Updated</th>
+                            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Items</th>
                             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Instructions</th>
                             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Status</th>
                         </tr>
@@ -34,6 +35,10 @@
             			<tr class="hover:bg-gray-100">        
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->created_at}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->updated_at}}</td>
+                        	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                @foreach ($order->foods as $food) {{$food->pivot->qty}}x {{$food->name}}<br> @endforeach
+                                @foreach ($order->packs as $pack) {{$pack->pivot->qty}}x {{$pack->name}} @endforeach
+                            </td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->status}}</td>
                     	</tr>
@@ -47,6 +52,7 @@
                         <tr>
                             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Created</th>
                             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Updated</th>
+                            <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Items</th>
                             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Instructions</th>
                             <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Status</th>
                         </tr>
@@ -56,6 +62,10 @@
             			<tr class="hover:bg-gray-100">        
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->created_at}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->updated_at}}</td>
+                        	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                @foreach ($order->foods as $food) {{$food->pivot->qty}}x {{$food->name}}<br> @endforeach
+                                @foreach ($order->packs as $pack) {{$pack->pivot->qty}}x {{$pack->name}} @endforeach
+                            </td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->status}}</td>
                     	</tr>
