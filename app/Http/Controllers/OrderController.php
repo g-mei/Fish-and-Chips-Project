@@ -46,7 +46,7 @@ class OrderController extends Controller
       if (auth()->user()){
 
           //checks if user has an existing order
-          $order = Order::where('user_id', auth()->user()->id)->first();
+          $order = Order::where('user_id', auth()->user()->id)->where('status', 'incart')->first();
 
           if($order && $order->status === 'incart') {
             
@@ -89,7 +89,7 @@ class OrderController extends Controller
       if (auth()->user()){
 
           //checks if user has an existing order
-          $order = Order::where('user_id', auth()->user()->id)->first();
+          $order = Order::where('user_id', auth()->user()->id)->where('status', 'incart')->first();
 
           if($order && $order->status === 'incart') {
             
@@ -133,7 +133,7 @@ class OrderController extends Controller
         ]);
         
         $uid = auth()->user()->id;
-        $order = Order::where('user_id', $uid)->first();
+        $order = Order::where('user_id', $uid)->where('status', 'incart')->first();
         $order->foods()->wherePivot('id', $id)->update([
             'qty' => $request->qty,
             'instructions' => $request->instructions
@@ -144,7 +144,7 @@ class OrderController extends Controller
     
     public function deleteOrderItem($id) {
         $uid = auth()->user()->id;
-        $order = Order::where('user_id', $uid)->first();
+        $order = Order::where('user_id', $uid)->where('status', 'incart')->first();
         $order->foods()->wherePivot('id', $id)->detach();
 
         return redirect('/order');
@@ -157,7 +157,7 @@ class OrderController extends Controller
         ]);
         
         $uid = auth()->user()->id;
-        $order = Order::where('user_id', $uid)->first();
+        $order = Order::where('user_id', $uid)->where('status', 'incart')->first();
         $order->packs()->wherePivot('id', $id)->update([
             'qty' => $request->qty,
             'instructions' => $request->instructions
@@ -168,7 +168,7 @@ class OrderController extends Controller
 
     public function deletePackOrderItem($id) {
         $uid = auth()->user()->id;
-        $order = Order::where('user_id', $uid)->first();
+        $order = Order::where('user_id', $uid)->where('status', 'incart')->first();
         $order->packs()->wherePivot('id', $id)->detach();
 
         return redirect('/order');
