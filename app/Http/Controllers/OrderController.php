@@ -126,11 +126,6 @@ class OrderController extends Controller
       }
     }
 
-    // edit order
-    public function edit() {
-        
-    }
-    
     // edit order item
     public function editOrderItem(Request $request, $id) {
         $this->validate($request, [
@@ -191,7 +186,13 @@ class OrderController extends Controller
 
     //view order history page
     public function viewOrderHistory() {
-        return view('order-history');
+        $uid = auth()->user()->id;
+        $orders = Order::where('user_id', $uid)->whereIn('status', ['waiting','cooking'])->get();
+        $past_orders = Order::where('user_id', $uid)->where('status', 'done')->get();
+        
+        return view('order-history')
+        ->with('orders', $orders)
+        ->with('past_orders', $past_orders);
     }
 
 }
