@@ -11,7 +11,9 @@ class OrderController extends Controller
     public function index()
     {
         $uid = auth()->user()->id;
-        $order = Order::where('user_id', $uid)->first();
+        $order = Order::where('user_id', $uid)
+            ->where('status', 'incart')
+            ->first();
         $foods = null;
         $totalcost = 0;
         $packs = null;
@@ -184,7 +186,7 @@ class OrderController extends Controller
         $order->instructions = $request->instructions;
         $order->save();
         
-        return redirect('/order');
+        return redirect('/order-history');
     }
 
     //view order history page
