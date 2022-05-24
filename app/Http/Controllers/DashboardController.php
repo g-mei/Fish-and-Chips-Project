@@ -67,6 +67,21 @@ class DashboardController extends Controller
         return view('admin.dashboard')
         ->with('orders', $orders);
     }
+
+    function updateOrderStatus(Request $request, $id) {
+        $orders = Order::whereIn('status', ['waiting','cooking'])->get();
+        $order = Order::where('id', $id)->first();
+
+        if($order->status === "waiting") {
+            $order->status = "cooking"; 
+        } elseif ($order->status === "cooking") {
+            $order->status = "done"; 
+        }
+
+        $order->save();
+
+        return view ('admin.dashboard')->with('orders', $orders);
+    }
     
 // Users =================================================================
     

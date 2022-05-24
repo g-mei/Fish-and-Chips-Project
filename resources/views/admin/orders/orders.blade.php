@@ -16,6 +16,8 @@
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
             @foreach ($orders as $order)
+            <form action="{{route('updateOrderStatus', ['id' => $order->id])}}" method="POST">
+                @csrf
                 <tr class="hover:bg-gray-100">
                 	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->status}}</td>
@@ -25,7 +27,17 @@
                         @foreach ($order->packs as $pack) {{$pack->pivot->qty}}x {{$pack->name}} @endforeach
                     </td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">---</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                        @if($order->status === "waiting")
+                        <button type="submit" class="bg-blue-400 p-1 rounded-sm">Cooking</button>
+                        @endif
+
+                        @if($order->status === "cooking")
+                        <button type="submit" class="bg-green-500 p-1 rounded-sm">Done</button>
+                        @endif
+                    </td>
                 </tr>
+            </form>
             @endforeach
             </tbody>
         </table>
