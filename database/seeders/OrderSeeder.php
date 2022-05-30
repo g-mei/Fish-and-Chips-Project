@@ -19,6 +19,7 @@ class OrderSeeder extends Seeder
             [
                 'instructions' => 'No salt',
                 'status' => 'incart',
+                'subtotal' => 39,
                 'review_title' => 'review title',
                 'review_desc' => 'review description',
                 'review_rate' => 5,

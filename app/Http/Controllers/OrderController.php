@@ -15,29 +15,20 @@ class OrderController extends Controller
             ->where('status', 'incart')
             ->first();
         $foods = null;
-        $totalcost = 0;
         $packs = null;
         
         if(!empty($order)) {
             $foods = $order->foods()->get();
             $packs = $order->packs()->get();
             
-            foreach ($foods as $food) {
-                $cost = $food->pivot->qty * $food->cost;
-                $totalcost += $cost;
-            }
-
-            foreach ($packs as $pack) {
-                $cost = $pack->pivot->qty * $pack->cost;
-                $totalcost += $cost;
-            }
+            $order->subtotal = $this->calculateSubtotal($order);
+            $order->save();
         }
         
         return view('order')
         ->with('order', $order)
         ->with('foods', $foods)
-        ->with('packs', $packs)
-        ->with('totalcost', $totalcost);
+        ->with('packs', $packs);
     }
 
     // Add food into order
@@ -74,7 +65,9 @@ class OrderController extends Controller
                 ]
             ]);
           }
-
+          
+          $order->subtotal = $this->calculateSubtotal($order);
+          $order->save();
           return redirect('/menu');
 
       } else {
@@ -118,6 +111,8 @@ class OrderController extends Controller
             ]);
           }
 
+          $order->subtotal = $this->calculateSubtotal($order);
+          $order->save();
           return redirect('/menu');
 
       } else {
@@ -139,6 +134,8 @@ class OrderController extends Controller
             'instructions' => $request->instructions
         ]);
         
+        $order->subtotal = $this->calculateSubtotal($order);
+        $order->save();
         return redirect('/order');
     }
     
@@ -147,6 +144,8 @@ class OrderController extends Controller
         $order = Order::where('user_id', $uid)->where('status', 'incart')->first();
         $order->foods()->wherePivot('id', $id)->detach();
 
+        $order->subtotal = $this->calculateSubtotal($order);
+        $order->save();
         return redirect('/order');
     }
 
@@ -163,6 +162,8 @@ class OrderController extends Controller
             'instructions' => $request->instructions
         ]);
         
+        $order->subtotal = $this->calculateSubtotal($order);
+        $order->save();
         return redirect('/order');
     }
 
@@ -171,6 +172,8 @@ class OrderController extends Controller
         $order = Order::where('user_id', $uid)->where('status', 'incart')->first();
         $order->packs()->wherePivot('id', $id)->detach();
 
+        $order->subtotal = $this->calculateSubtotal($order);
+        $order->save();
         return redirect('/order');
     }
     
@@ -179,6 +182,7 @@ class OrderController extends Controller
         $order = Order::where('id', $id)->first();
         $order->status = 'waiting';
         $order->instructions = $request->instructions;
+        $order->subtotal = $this->calculateSubtotal($order);
         $order->save();
         
         return redirect('/order-history');
@@ -193,6 +197,26 @@ class OrderController extends Controller
         return view('order-history')
         ->with('orders', $orders)
         ->with('past_orders', $past_orders);
+    }
+    
+    function calculateSubtotal($order) {
+        $totalcost = 0;
+        
+        if(!empty($order)) {
+            $foods = $order->foods()->get();
+            $packs = $order->packs()->get();
+            
+            foreach ($foods as $food) {
+                $cost = $food->pivot->qty * $food->cost;
+                $totalcost += $cost;
+            }
+            
+            foreach ($packs as $pack) {
+                $cost = $pack->pivot->qty * $pack->cost;
+                $totalcost += $cost;
+            }
+        }
+        return $totalcost;
     }
 
 }

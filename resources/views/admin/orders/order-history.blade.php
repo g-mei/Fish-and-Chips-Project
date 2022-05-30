@@ -24,7 +24,7 @@
                         @foreach ($order->foods as $food) {{$food->pivot->qty}}x {{$food->name}}<br> @endforeach
                         @foreach ($order->packs as $pack) {{$pack->pivot->qty}}x {{$pack->name}} @endforeach
                     </td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">---</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->review_desc}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->review_rate}}</td>
                 </tr>

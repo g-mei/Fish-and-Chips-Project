@@ -26,7 +26,7 @@
                         @foreach ($order->foods as $food) {{$food->pivot->qty}}x {{$food->name}}<br> @endforeach
                         @foreach ($order->packs as $pack) {{$pack->pivot->qty}}x {{$pack->name}} @endforeach
                     </td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">---</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                         @if($order->status === "waiting")
                         <button type="submit" class="bg-blue-400 p-1 rounded-sm">Cooking</button>
@@ -65,7 +65,7 @@
                         @foreach ($order->foods as $food) {{$food->pivot->qty}}x {{$food->name}}<br> @endforeach
                         @foreach ($order->packs as $pack) {{$pack->pivot->qty}}x {{$pack->name}} @endforeach
                     </td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">---</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                         @if($order->status === "pickup")
                         <button type="submit" class="bg-blue-400 p-1 rounded-sm">Picked up</button>

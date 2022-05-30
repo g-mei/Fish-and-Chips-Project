@@ -8,7 +8,7 @@
             
             <br/>
 
-            <span style="padding: 0 1rem;"><b>Total Cost: ${{$totalcost}}</b></span>
+            <span style="padding: 0 1rem;"><b>Total Cost: ${{$order->subtotal}}</b></span>
 
             <form class="mt-5" action="{{route('submitOrder', ['id' => $order->id])}}" method="POST">
                 @method('PUT')
