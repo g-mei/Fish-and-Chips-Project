@@ -56,9 +56,11 @@ class DashboardController extends Controller
 
     function viewOrders() {
         $orders = Order::whereIn('status', ['waiting','cooking'])->get();
+        $orders_pickup = Order::whereIn('status', ['pickup'])->get();
         
         return view('admin.dashboard')
-        ->with('orders', $orders);
+        ->with('orders', $orders)
+        ->with('orders_pickup', $orders_pickup);
     }
 
     function viewOrderHistory() {
@@ -75,12 +77,14 @@ class DashboardController extends Controller
         if($order->status === "waiting") {
             $order->status = "cooking"; 
         } elseif ($order->status === "cooking") {
+            $order->status = "pickup"; 
+        } elseif ($order->status === "pickup") {
             $order->status = "done"; 
         }
 
         $order->save();
 
-        return view ('admin.dashboard')->with('orders', $orders);
+        return redirect('/dashboard/orders')->with('orders', $orders);
     }
     
 // Users =================================================================

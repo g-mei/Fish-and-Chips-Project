@@ -17,7 +17,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('instructions')->nullable();
-            $table->enum('status', ['incart', 'waiting', 'cooking', 'done'])->nullable();
+            $table->enum('status', ['incart', 'waiting', 'cooking', 'pickup', 'done', 'cancelled'])->nullable();
+            $table->double('subtotal', 8, 2)->nullable();
             $table->string('review_title')->nullable();
             $table->string('review_desc')->nullable();
             $table->integer('review_rate')->nullable();
