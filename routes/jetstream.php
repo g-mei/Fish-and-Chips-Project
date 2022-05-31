@@ -68,6 +68,7 @@ Route::group(['middleware' => config('jetstream.middleware', ['web'])], function
         //viewing routes
         Route::get('/dashboard/orders',[DashboardController::class, 'viewOrders'])->name('orders');
         Route::post('/dashboard/orders/{id}',[DashboardController::class, 'updateOrderStatus'])->name('updateOrderStatus');
+        Route::post('/dashboard/orders/cancel/{id}',[DashboardController::class, 'cancelOrder'])->name('orderFood');
         Route::get('/dashboard/order_history',[DashboardController::class, 'viewOrderHistory'])->name('order_history');
 
         //Route::resource('foods', 'App\Http\Controllers\FoodsController');        

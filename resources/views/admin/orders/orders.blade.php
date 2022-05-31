@@ -36,13 +36,16 @@
                         <button type="submit" class="bg-green-500 p-1 rounded-sm">Done</button>
                         @endif
                     </td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                        <button class="openModal bg-gray-400 p-1 rounded-sm" data-label="orderFood" data-id="{{$order->id}}">Cancel Order</button>
+                    </td>
                 </tr>
             </form>
+            @include('admin.orders.order-modal')
             @endforeach
             </tbody>
         </table>
-        
-        <h1 class="text-2xl">Waiting for Pickup</h1>
+        <h1 class="text-2xl" style="margin-top: 30px">Waiting for Pickup</h1>
         <table class="bg-gray-100">
             <thead>
                 <tr>
@@ -68,7 +71,7 @@
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                         @if($order->status === "pickup")
-                        <button type="submit" class="bg-blue-400 p-1 rounded-sm">Picked up</button>
+                        <button type="submit" class="bg-green-600 p-1 rounded-sm text-white">Picked up</button>
                         @endif
                     </td>
                 </tr>

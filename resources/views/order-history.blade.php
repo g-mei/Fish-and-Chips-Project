@@ -47,8 +47,8 @@
                     	@endforeach
                 	</tbody>
                 </table>
-                	<br/>
-                <h1 class="text-2xl">Past Orders</h1>
+                <br/>
+                <h1 class="text-2xl" style="margin-top: 30px">Past Orders</h1>
                 <table class="bg-gray-100">
                     <thead>
                         <tr>
