@@ -179,10 +179,6 @@
                                             {{ __('Profile') }}
                                         </x-jet-dropdown-link>
 
-                                        <x-jet-dropdown-link href="{{ route('order-history') }}" :active="request()->routeIs('order-history')">
-                                            {{ __('Order History') }}
-                                        </x-jet-dropdown-link>
-
                                         <div class="border-t border-blue-100"></div>
 
                                         <!-- Authentication -->
@@ -224,6 +220,9 @@
                         <x-jet-responsive-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
                             {{ __('About Us') }}
                         </x-jet-responsive-nav-link>
+                        <x-jet-responsive-nav-link href="{{ route('order-history') }}" :active="request()->routeIs('order-history')">
+                            {{ __('My Orders') }}
+                        </x-jet-responsive-nav-link>
                     </div>
 
                     <!-- Responsive Settings Options -->
@@ -234,9 +233,6 @@
                         <div class="mt-3 space-y-1">
                             <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                                 {{ __('Profile') }}
-                            </x-jet-responsive-nav-link>
-                            <x-jet-responsive-nav-link href="{{ route('order-history') }}" :active="request()->routeIs('order-history')">
-                                {{ __('Order History') }}
                             </x-jet-responsive-nav-link>
 
                             <!-- Authentication -->
