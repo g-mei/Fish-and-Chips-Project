@@ -63,18 +63,22 @@
                         </table>
 
                     <br/>
-
-                    @if($foods->isNotEmpty() || $packs->isNotEmpty())
-                    	<p class=""><b>Subtotal: ${{$order->subtotal}}</b></p>
-
-                        <div class="py-5 flex justify-end items-center">
-                            <button type="button" class="openModal bg-blue-600 px-2 py-2 rounded-md text-white hover:shadow-md" data-label="submit" data-id="{{$order->id}}">Submit Order To Restaurant</button>
-                        </div>
-                        @include('order-submit-modal')
+                    
+                    
+                    @if($order)
+                        @if ($order->foods->first() || $order->packs->first())
+                        	<p class=""><b>Subtotal: ${{$order->subtotal}}</b></p>
+    
+                            <div class="py-5 flex justify-end items-center">
+                                <button type="button" class="openModal bg-blue-600 px-2 py-2 rounded-md text-white hover:shadow-md" data-label="submit" data-id="{{$order->id}}">Submit Order To Restaurant</button>
+                            </div>
+                            @include('order-submit-modal')
+                        @else
+                            <p class="mb-5">Your cart is empty!</p>
+                        @endif
                     @else
-                        <p class="mb-5">Your cart is empty!</p>
+                    	<p class="mb-5">Your cart is empty!</p>
                     @endif
-
                     
                 </div>
         </section>
