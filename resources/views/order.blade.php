@@ -64,7 +64,7 @@
 
                     <br/>
 
-                    @if($order)
+                    @if($foods->isNotEmpty() || $packs->isNotEmpty())
                     	<p class=""><b>Subtotal: ${{$order->subtotal}}</b></p>
 
                         <div class="py-5 flex justify-end items-center">

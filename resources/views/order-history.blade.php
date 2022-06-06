@@ -37,8 +37,12 @@
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->created_at}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->updated_at}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
-                                @foreach ($order->foods as $food) {{$food->pivot->qty}}x {{$food->name}}<br> @endforeach
-                                @foreach ($order->packs as $pack) {{$pack->pivot->qty}}x {{$pack->name}} @endforeach
+                                @foreach ($order->foods as $food) 
+                                	<b>{{$food->pivot->qty}}x {{$food->name}}</b> {{$food->pivot->instructions}}<br>
+                                @endforeach
+                                @foreach ($order->packs as $pack) 
+                                	<b>{{$pack->pivot->qty}}x {{$pack->name}}</b> {{$pack->pivot->instructions}}<br>
+                            	@endforeach
                             </td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
@@ -66,8 +70,12 @@
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->created_at}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->updated_at}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
-                                @foreach ($order->foods as $food) {{$food->pivot->qty}}x {{$food->name}}<br> @endforeach
-                                @foreach ($order->packs as $pack) {{$pack->pivot->qty}}x {{$pack->name}} @endforeach
+                                @foreach ($order->foods as $food) 
+                                	<b>{{$food->pivot->qty}}x {{$food->name}}</b> {{$food->pivot->instructions}}<br>
+                                @endforeach
+                                @foreach ($order->packs as $pack) 
+                                	<b>{{$pack->pivot->qty}}x {{$pack->name}}</b> {{$pack->pivot->instructions}}<br>
+                            	@endforeach
                             </td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
                         	<td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
