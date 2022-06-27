@@ -14,7 +14,7 @@ class CategoryController extends Controller
 
     function addCategory(Request $request) {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required|max:50'
         ]);
 
         $category = new Category;
@@ -26,7 +26,7 @@ class CategoryController extends Controller
 
     function editCategory(Request $request, $id) {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required|max:50'
         ]);
         
         $category = Category::find($id);

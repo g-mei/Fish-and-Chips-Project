@@ -12,12 +12,12 @@
                 <label for="name" class="block font-bold text-gray-600">Name</label>
                 <input type="text" name="name" id="name"
                     class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    value="{{$user->name}}">
+                    value="{{$user->name}}" maxlength="50">
 
                 <label for="email" class="block font-bold text-gray-600">Email</label>
                 <input type="email" name="email" id="email"
                     class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    value="{{$user->email}}">
+                    value="{{$user->email}}" maxlength="320">
 
                 <div class="py-6">   
                     <a href="{{route('users')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button">Cancel</a>
