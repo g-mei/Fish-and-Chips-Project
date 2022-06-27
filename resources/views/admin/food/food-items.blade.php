@@ -61,4 +61,6 @@
             </div>
         </div>
     </div>
+    
+    @stack('checkFile')
 </div>

@@ -34,7 +34,7 @@
                             class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600">{{$food->description}}</textarea>
 
                         <label for="image" class="block font-bold text-gray-600">Upload Image</label>
-                        <input type="file" name="image" id="image"
+                        <input type="file" name="image" id="edit_food_image"
                             class="w-full mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                             accept="image/png, image/jpeg">
                     </div>

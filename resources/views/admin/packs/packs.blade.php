@@ -49,3 +49,5 @@
 <div class="pt-10">
     {{ $packs->links() }}
 </div>
+
+@stack('checkFile')

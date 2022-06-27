@@ -44,6 +44,7 @@
 
         @push('modal')
             <script type="text/javascript" src="{{URL::asset('js/modal.js')}}"></script>
+            <script type="text/javascript" src="{{URL::asset('js/checkFile.js')}}"></script>
         @endpush
         
         @livewireScripts

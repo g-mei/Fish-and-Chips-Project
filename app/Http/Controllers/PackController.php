@@ -24,7 +24,8 @@ class PackController extends Controller
         $this->validate($request, [
             'name' => 'required|max:50',
             'cost' => 'required|numeric|between:0,1000',
-            'description' => 'max:255'
+            'description' => 'max:255',
+            'image' => 'image|file|max:32000'
         ]);
 
         $pack = new Pack;
@@ -55,7 +56,8 @@ class PackController extends Controller
         $this->validate($request, [
             'name' => 'required|max:50',
             'cost' => 'required|numeric|between:0,1000',
-            'description' => 'max:255'
+            'description' => 'max:255',
+            'image' => 'image|file|max:32000'
         ]);
         
         $pack = Pack::find($request->id);

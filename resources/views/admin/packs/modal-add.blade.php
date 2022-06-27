@@ -34,7 +34,7 @@
                             placeholder="Enter pack description..." maxlength="255"></textarea>
                         
                         <label for="image" class="block font-bold text-gray-600">Upload Image</label>
-                        <input type="file" name="image" id="image"
+                        <input type="file" name="image" id="add_pack_image"
                             class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
                             accept="image/png, image/jpeg">
                     </div>
