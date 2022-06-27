@@ -17,7 +17,7 @@
 
         @include('admin.sidebar')
 
-            <div class="mt-10 min-h-screen relative">
+            <div class="pt-10 min-h-screen relative">
                 <div class="px-10">
                     @if (Route::is('categories'))
                         @include('admin.categories.categories')
