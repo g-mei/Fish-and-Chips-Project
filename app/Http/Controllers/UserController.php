@@ -22,13 +22,13 @@ class UserController extends Controller
         $user->update(['name'=>$request->get('name')]);
         $user->update(['email'=>$request->get('email')]);
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/users');
     }
 
     function deleteUser($id) {
         $user= User::find($id);
         $user->delete();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/users');
     }
 }

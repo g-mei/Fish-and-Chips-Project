@@ -21,7 +21,7 @@ class CategoryController extends Controller
         $category->name = $request->input('name');
         $category->save();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/categories');
     }
 
     function editCategory(Request $request, $id) {
@@ -32,13 +32,13 @@ class CategoryController extends Controller
         $category = Category::find($id);
         $category->update(['name'=>$request->get('name')]);
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/categories');
     }
 
     function deleteCategory($id) {
         $category= Category::find($id);
         $category->delete();
 
-        return redirect('/dashboard');
+        return redirect('/dashboard/categories');
     }
 }
