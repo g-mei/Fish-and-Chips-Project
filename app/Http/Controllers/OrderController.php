@@ -34,7 +34,12 @@ class OrderController extends Controller
     // Add food into order
     public function store(Request $request, $id)
     {
-      if (auth()->user()){
+        $this->validate($request, [
+            'qty' => 'required|integer|between:1,99',
+            'instructions' => 'max:255'
+        ]);
+        
+        if (auth()->user()){
 
           //checks if user has an existing order
           $order = Order::where('user_id', auth()->user()->id)->where('status', 'incart')->first();
@@ -79,7 +84,12 @@ class OrderController extends Controller
     // Add pack into order
     public function storePack(Request $request, $id)
     {
-      if (auth()->user()){
+        $this->validate($request, [
+            'qty' => 'required|integer|between:1,99',
+            'instructions' => 'max:255'
+        ]);
+        
+        if (auth()->user()){
 
           //checks if user has an existing order
           $order = Order::where('user_id', auth()->user()->id)->where('status', 'incart')->first();
@@ -124,7 +134,8 @@ class OrderController extends Controller
     // edit order item
     public function editOrderItem(Request $request, $id) {
         $this->validate($request, [
-            'qty' => 'required'
+            'qty' => 'required|integer|between:1,99',
+            'instructions' => 'max:255'
         ]);
         
         $uid = auth()->user()->id;
@@ -152,7 +163,8 @@ class OrderController extends Controller
     //pack functions edit and delete
     public function editPackOrderItem(Request $request, $id) {
         $this->validate($request, [
-            'qty' => 'required'
+            'qty' => 'required|integer|between:1,99',
+            'instructions' => 'max:255'
         ]);
         
         $uid = auth()->user()->id;
@@ -179,6 +191,10 @@ class OrderController extends Controller
     
     //submit order to restaurant
     public function submitOrder(Request $request, $id) {
+        $this->validate($request, [
+            'instructions' => 'max:255'
+        ]);
+        
         $order = Order::where('id', $id)->first();
         $order->status = 'waiting';
         $order->instructions = $request->instructions;

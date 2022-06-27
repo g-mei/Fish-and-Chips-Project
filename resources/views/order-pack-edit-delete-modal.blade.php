@@ -13,12 +13,12 @@
 				<label for="qty" class="block font-bold text-gray-600">QTY</label>
                 <input type="number" name="qty" min="0" name="qty" id="qty"
                     class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    value="{{$pack->pivot->qty}}">
+                    value="{{$pack->pivot->qty}}" min="1" max="99" required>
                 
 				<label for="instructions" class="block font-bold text-gray-600">Instructions</label>
                 <input type="text" name="instructions" id="instructions"
                     class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    value="{{$pack->pivot->instructions}}">
+                    value="{{$pack->pivot->instructions}}" maxlength="255">
                     
                 <div class="py-6">   
                     <a href="{{route('order')}}" class="px-4 py-2 text-white bg-gray-600 rounded closeModal" type="button">Cancel</a>
