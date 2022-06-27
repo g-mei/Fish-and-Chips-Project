@@ -14,12 +14,12 @@
                         <label for="name" class="block font-bold text-gray-600">Name</label>
                         <input type="text" name="name" id="name"
                             class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
-                            value="{{$food->name}}">
+                            value="{{$food->name}}" maxlength="50">
 
                         <label for="cost" class="block font-bold text-gray-600">Cost</label>
                         <input type="number" name="cost" step=".01" min="0" name="cost" id="cost"
                             class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
-                            value="{{$food->cost}}">
+                            value="{{$food->cost}}" max="1000">
 
                         <label for="category" class="block font-bold text-gray-600">Category</label>
                         <select id="category" name="category" class="w-full p-5 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600">
@@ -30,7 +30,7 @@
                         </select>
 
                         <label for="description" class="block font-bold text-gray-600">Description</label>
-                        <textarea name="description" id="description" rows="4"
+                        <textarea name="description" id="description" rows="4" maxlength="255"
                             class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600">{{$food->description}}</textarea>
 
                         <label for="image" class="block font-bold text-gray-600">Upload Image</label>

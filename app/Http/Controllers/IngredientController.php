@@ -9,7 +9,7 @@ class IngredientController extends Controller
 {
     function addIngredient(Request $request) {
         $this->validate($request, [
-            'name' => 'required'
+            'name' => 'required|max:50'
         ]);
         
         $ingredient = new Ingredient;

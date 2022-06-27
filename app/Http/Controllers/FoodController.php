@@ -22,8 +22,9 @@ class FoodController extends Controller
 
     function addFood(Request $request) {
         $this->validate($request, [
-            'name' => 'required',
-            'cost' => 'required'
+            'name' => 'required|max:50',
+            'cost' => 'required|numeric|between:0,1000',
+            'description' => 'max:255'
         ]);
         
         $food = new Food;
@@ -52,8 +53,9 @@ class FoodController extends Controller
 
     function editFood(Request $request) {
         $this->validate($request, [
-            'name' => 'required',
-            'cost' => 'required'
+            'name' => 'required|max:50',
+            'cost' => 'required|numeric|between:0,1000',
+            'description' => 'max:255'
         ]);
         
         $food = Food::find($request->id);
