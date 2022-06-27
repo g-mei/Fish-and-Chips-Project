@@ -191,8 +191,8 @@ class OrderController extends Controller
     //view order history page
     public function viewOrderHistory() {
         $uid = auth()->user()->id;
-        $orders = Order::where('user_id', $uid)->whereIn('status', ['waiting','cooking','pickup'])->get();
-        $past_orders = Order::where('user_id', $uid)->whereIn('status', ['done','cancelled'])->get();
+        $orders = Order::where('user_id', $uid)->whereIn('status', ['waiting','cooking','pickup']);
+        $past_orders = Order::where('user_id', $uid)->whereIn('status', ['done','cancelled'])->paginate(5);
         
         return view('order-history')
         ->with('orders', $orders)

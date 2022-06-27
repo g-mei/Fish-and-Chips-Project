@@ -984,6 +984,18 @@ select {
 .top-0 {
   top: 0px;
 }
+.top-\[50\%\] {
+  top: 50%;
+}
+.left-\[50\%\] {
+  left: 50%;
+}
+.left-\[10\%\] {
+  left: 10%;
+}
+.left-\[40\%\] {
+  left: 40%;
+}
 .z-0 {
   z-index: 0;
 }
@@ -995,6 +1007,9 @@ select {
 }
 .m-0 {
   margin: 0px;
+}
+.m-auto {
+  margin: auto;
 }
 .mx-auto {
   margin-left: auto;
@@ -1093,6 +1108,9 @@ select {
 .ml-5 {
   margin-left: 1.25rem;
 }
+.mr-auto {
+  margin-right: auto;
+}
 .block {
   display: block;
 }
@@ -1143,6 +1161,16 @@ select {
 }
 .min-h-screen {
   min-height: 100vh;
+}
+.min-h-min {
+  min-height: -webkit-min-content;
+  min-height: -moz-min-content;
+  min-height: min-content;
+}
+.min-h-max {
+  min-height: -webkit-max-content;
+  min-height: -moz-max-content;
+  min-height: max-content;
 }
 .w-5 {
   width: 1.25rem;
@@ -1615,6 +1643,10 @@ select {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1660,6 +1692,12 @@ select {
 .pt-10 {
   padding-top: 2.5rem;
 }
+.pl-5 {
+  padding-left: 1.25rem;
+}
+.pr-5 {
+  padding-right: 1.25rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1668,6 +1706,9 @@ select {
 }
 .text-right {
   text-align: right;
+}
+.align-middle {
+  vertical-align: middle;
 }
 .font-sans {
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";

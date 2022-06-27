@@ -17,7 +17,7 @@
 
         <section>            
         	<br>
-            <div class="relative">
+            <div class="relative px-5">
                 <h1 class="text-2xl">Orders in Progress</h1>
 
                 <div style="overflow-x:auto;">
@@ -53,8 +53,9 @@
                         </tbody>
                     </table>
                 </div>
-                
+
                 <br/>
+
                 <h1 class="text-2xl" style="margin-top: 30px">Past Orders</h1>
 
                 <div style="overflow-x:auto;">
@@ -89,6 +90,10 @@
                             @endforeach
                         </tbody>
                     </table>
+                </div>
+
+                <div class="py-10">
+                    {{ $past_orders->links() }}
                 </div>
             </div>
         </section>

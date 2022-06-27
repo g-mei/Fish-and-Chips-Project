@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     </head>
-    <body>
+    <body class="relative min-h-screen">
             <x-app-layout></x-app-layout>
             <div class="flex justify-center items-center text-white" style="background-image: url('/img/image_2.jpg'); background-position: center; height:150px; width:100%; background-repeat:no-repeat;">
                 <h1 style="font-size: 3rem; font-weight:bold">Cart</h1>
@@ -17,7 +17,7 @@
 
             <section>
                 <br/>             
-                <div class="relative">
+                <div class="px-5">
                     <div style="overflow-x:auto;">
                         <table class="bg-gray-100">
                             <thead>
@@ -63,22 +63,25 @@
                             </tbody>
                         </table>
                     </div>
+                    
                     <br/>
-                    
-                    
+
                     @if($order)
                         @if ($order->foods->first() || $order->packs->first())
-                        	<p class=""><b>Subtotal: ${{$order->subtotal}}</b></p>
-    
                             <div class="py-5 flex justify-end items-center">
+                                <p class="pr-5"><b>Subtotal: ${{$order->subtotal}}</b></p>
                                 <button type="button" class="openModal bg-blue-600 px-2 py-2 rounded-md text-white hover:shadow-md" data-label="submit" data-id="{{$order->id}}">Submit Order To Restaurant</button>
                             </div>
                             @include('order-submit-modal')
                         @else
+                        <div class="text-center">
                             <p class="mb-5">Your cart is empty!</p>
+                        </div>
                         @endif
                     @else
-                    	<p class="mb-5">Your cart is empty!</p>
+                        <div class="text-center">
+                            <p class="mb-5">Your cart is empty!</p>
+                        </div>
                     @endif
                     
                 </div>

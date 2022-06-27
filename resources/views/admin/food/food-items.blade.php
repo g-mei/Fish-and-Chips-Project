@@ -1,7 +1,7 @@
 <x-jet-validation-errors class="mb-4" />
 
-<div class="responsive-container">
-    <div class="pb-5">
+<div class="responsive-container justify-between">
+    <div class="pb-5 pt-10">
         <h1 class="text-2xl">Food Items</h1>
 
         <div class="py-5">
