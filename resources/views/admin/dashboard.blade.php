@@ -16,7 +16,7 @@
         <x-app-layout></x-app-layout>
         @include('admin.sidebar')
 
-            <div class="mt-10 overflow-hidden min-h-screen container mx-auto">
+            <div class="mt-10 min-h-screen container mx-auto">
                 @if (Route::is('categories'))
                     @include('admin.categories.categories')
                 @elseif(Route::is('food'))

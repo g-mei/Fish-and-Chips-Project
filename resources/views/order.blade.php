@@ -17,7 +17,8 @@
 
             <section>
                 <br/>             
-                <div class="text-center flex flex-col justify-center items-center">
+                <div class="relative">
+                    <div style="overflow-x:auto;">
                         <table class="bg-gray-100">
                             <thead>
                                 <tr>
@@ -61,7 +62,7 @@
                                 @endisset
                             </tbody>
                         </table>
-
+                    </div>
                     <br/>
                     
                     
