@@ -1,33 +1,42 @@
-var maxsize = 33554432;
+const maxsize = 33554432;
+const addFoodImgSize = document.getElementById("add_food_image");
+const editFoodImgSize = document.getElementById("edit_food_image");
+const addPackImgSize = document.getElementById("add_pack_image");
+const editPackImgSize = document.getElementById("edit_pack_image");
 
-var addFoodImgSize = document.getElementById("add_food_image");
-addFoodImgSize.onchange = function() {
+
+if(addFoodImgSize){
+    addFoodImgSize.addEventListener('change', function(){
+        if(this.files[0].size > maxsize){
+           alert("Image is too large. Maximum file size is 32MB");
+           this.value = "";
+        };
+    });
+}
+
+if(editFoodImgSize){
+    editFoodImgSize.addEventListener('change', function(){
+        if(this.files[0].size > maxsize){
+        alert("Image is too large. Maximum file size is 32MB");
+        this.value = "";
+        };
+    });
+}
+
+if(addPackImgSize) {
+    addPackImgSize.addEventListener('change', function(){
+        if(this.files[0].size > maxsize){
+            alert("Image is too large. Maximum file size is 32MB");
+            this.value = "";
+         };
+    })
+}
+
+if(editPackImgSize) {
+editPackImgSize.addEventListener('change', function(){
     if(this.files[0].size > maxsize){
        alert("Image is too large. Maximum file size is 32MB");
        this.value = "";
     };
-};
-
-var editFoodImgSize = document.getElementById("edit_food_image");
-editFoodImgSize.onchange = function() {
-    if(this.files[0].size > maxsize){
-       alert("Image is too large. Maximum file size is 32MB");
-       this.value = "";
-    };
-};
-
-var addPackImgSize = document.getElementById("add_pack_image");
-addPackImgSize.onchange = function() {
-    if(this.files[0].size > maxsize){
-       alert("Image is too large. Maximum file size is 32MB");
-       this.value = "";
-    };
-};
-
-var addPackImgSize = document.getElementById("edit_pack_image");
-addPackImgSize.onchange = function() {
-    if(this.files[0].size > maxsize){
-       alert("Image is too large. Maximum file size is 32MB");
-       this.value = "";
-    };
-};
+});
+}

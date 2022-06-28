@@ -44,6 +44,9 @@
 
         @push('modal')
             <script type="text/javascript" src="{{URL::asset('js/modal.js')}}"></script>
+        @endpush
+        
+        @push('checkFile')
             <script type="text/javascript" src="{{URL::asset('js/checkFile.js')}}"></script>
         @endpush
         
