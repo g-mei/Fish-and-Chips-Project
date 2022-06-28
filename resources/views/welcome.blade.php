@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>Fish and Chips</title>
 
         <!-- Fonts -->
@@ -26,10 +26,45 @@
             </div>
         </div>
 
+        {{-- Information about how to order --}}
+        <div class="bg-pink-300">
+          <div class="p-6 text-center text-blue-600">
+            <div class="grid lg:grid-cols-4 md:grid-cols-4">
+              <div class="mb-6">
+                <h5 class="uppercase font-bold mb-2.5">STEP 1</h5>
+                <i class="fa-solid fa-cart-shopping fa-2x py-5"></i>
+                <p>Login and order your</p>
+                <p>fish and chips online.</p>
+              </div>
+        
+              <div class="mb-6">
+                <h5 class="uppercase font-bold mb-2.5">STEP 2</h5>
+                <i class="fa-solid fa-kitchen-set fa-2x py-5"></i>
+                <p>Submit the order and the</p>
+                <p>restaurant will start preparing it.</p>
+              </div>
+
+              <div class="mb-6">
+                <h5 class="uppercase font-bold mb-2.5">STEP 3</h5>
+                <i class="fa-solid fa-money-bill fa-2x py-5"></i>
+                <p>When it's ready for pick up,</p>
+                <p>collect the order and pay at the counter.</p>
+              </div>
+
+              <div class="mb-6">
+                <h5 class="uppercase font-bold mb-2.5">STEP 4</h5>
+                <i class="fa-solid fa-utensils fa-2x py-5"></i>
+                <p>Enjoy your delicious</p>
+                <p>Fish and Chips.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {{-- Opening Hours --}}
         <div class="bg-blue-500 w-[100%] text-white py-8 text-center grid lg:grid-cols-2 md:grid-cols-2">
             <div class="py-4">
-                <h3 class="text-lg py-4 font-bold">Address</h3>
+                <h3 class="text-lg pb-4 font-bold">Address</h3>
                 <p>123 Spring Road,</p>
                 <p>Enterville</p>
                 <p>9876</p>
@@ -90,34 +125,9 @@
 
         {{-- Footer--}}
         <footer class="bg-gray-100 text-center">
-            {{-- Sign up field --}}
-            <div class="px-6 py-6" style="background-color: rgba(61, 131, 211, 0.2);">
-              <form action="">
-                <div class="grid md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
-                  <div class="md:ml-auto md:mb-6">
-                    <p class="text-gray-800">
-                      <strong>Sign up for our newsletter</strong>
-                    </p>
-                  </div>
-          
-                  <div class="md:mb-6">
-                    <input
-                      type="text"
-                      class="form-control block w-full px-5 py-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none "
-                      id="exampleFormControlInput1"
-                      placeholder="Email address"/>
-                  </div>
-          
-                  <div class="md:mr-auto">
-                    <button type="button" class="inline-block px-6 py-4 bg-blue-500 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-blue-600 hover:shadow-lg focus:bg-blue-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-600 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-
             {{-- Footer Links --}}
             <div class="p-6">
-                <div class="grid lg:grid-cols-4 md:grid-cols-3">
+                <div class="grid lg:grid-cols-3 md:grid-cols-3">
                   <div class="mb-6">
                     <h5 class="uppercase font-bold mb-2.5 text-gray-800">Explore the Page</h5>
             
@@ -164,7 +174,7 @@
               </div>
 
             <div class="text-center text-gray-700 p-4" style="background-color: rgba(0, 0, 0, 0.2);">
-              © 2021 Copyright:
+              © 2022 Copyright:
               <a class="text-gray-800" href="{{route('/')}}">Fish and Chips</a>
             </div>
           </footer>
