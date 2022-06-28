@@ -15,16 +15,16 @@
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <x-jet-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')">
+                                <x-jet-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')" class="hover:text-pink-300">
                                     {{ __('Home') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')">
+                                <x-jet-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')" class="hover:text-pink-300">
                                     {{ __('Menu') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                                <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')" class="hover:text-pink-300">
                                     {{ __('About Us') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->is('dashboard', 'dashboard/*')">
+                                <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->is('dashboard', 'dashboard/*')" class="hover:text-pink-300">
                                     {{ __('Dashboard') }}
                                 </x-jet-nav-link>
                             </div>
@@ -140,24 +140,24 @@
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <x-jet-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')">
+                                <x-jet-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')" class="hover:text-pink-300">
                                     {{ __('Home') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')">
+                                <x-jet-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')" class="hover:text-pink-300">
                                     {{ __('Menu') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                                <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')" class="hover:text-pink-300">
                                     {{ __('About Us') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link href="{{ route('order-history') }}" :active="request()->routeIs('order-history')">
+                                <x-jet-nav-link href="{{ route('order-history') }}" :active="request()->routeIs('order-history')" class="hover:text-pink-300">
                                     {{ __('My Orders') }}
                                 </x-jet-nav-link>
                             </div>
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
-                            <x-jet-nav-link href="{{ route('order') }}" :active="request()->routeIs('order')">
-                                    {{ __('Cart') }}
+                            <x-jet-nav-link href="{{ route('order') }}" :active="request()->routeIs('order')" class="hover:text-pink-300">
+                                {{ __('Cart') }}
                             </x-jet-nav-link>
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
@@ -263,13 +263,13 @@
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <x-jet-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')">
+                                <x-jet-nav-link href="{{ route('/') }}" :active="request()->routeIs('/')" class="hover:text-pink-300">
                                     {{ __('Home') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')">
+                                <x-jet-nav-link href="{{ route('menu') }}" :active="request()->routeIs('menu')" class="hover:text-pink-300">
                                     {{ __('Menu') }}
                                 </x-jet-nav-link>
-                                <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')">
+                                <x-jet-nav-link href="{{ route('about') }}" :active="request()->routeIs('about')" class="hover:text-pink-300">
                                     {{ __('About Us') }}
                                 </x-jet-nav-link>
                             </div>
@@ -279,10 +279,10 @@
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
                                 <div align="right" width="48">
-                                    <a href="{{ route('login') }}" class="text-sm text-white dark:text-white" :active="request()->routeIs('login')">Log in</a>
+                                    <a href="{{ route('login') }}" class="text-sm text-white dark:text-white hover:text-pink-300" :active="request()->routeIs('login')">Log in</a>
                                     
                                     @if (Route::has('register'))
-                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-white dark:text-white" :active="request()->routeIs('register')">Register</a>
+                                        <a href="{{ route('register') }}" class="ml-4 text-sm text-white dark:text-white hover:text-pink-300" :active="request()->routeIs('register')">Register</a>
                                     @endif
                                 </div>
                             </div>

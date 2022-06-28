@@ -16,10 +16,10 @@
             <div class="flex justify-center">
                 <div class="justify-center row">
                     <div class="text-center" style="margin-top: 10rem">
-                        <h1 style="font-size: 2rem; font-style: bold;">Best Fish and Chips you'll ever have!</h1>
-                        <p class="px-5 mb-10 text-xl text-gray-700">Everything is fresh and delicious!</p>
+                        <h1 style="font-size: 2rem;" class="font-bold text-blue-800">Best Fish and Chips you'll ever have!</h1>
+                        <p class="px-5 mb-10 text-xl text-blue-800 italic">Everything is fresh and delicious!</p>
                         <ul class="flex flex-wrap justify-center" style="margin-top:5rem">
-                            <li><a style="background-color: rgb(243 186 229); padding: 1rem 2rem; color:rgb(40 140 215); font-weight:900;"href="{{route('menu')}}">LOOK AT THE MENU</a></li>
+                          <li><a href="{{route('menu')}}" class="bg-pink-300 text-blue-700 py-3 px-2 rounded hover:bg-blue-600 hover:text-pink-300 hover:cursor-pointer transition font-bold">LOOK AT THE MENU</a></li>
                         </ul>
                     </div>
                 </div>
