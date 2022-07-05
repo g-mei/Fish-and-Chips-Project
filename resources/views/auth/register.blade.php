@@ -13,7 +13,7 @@
 
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
-                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" maxlength="50" required autofocus autocomplete="name" />
+                <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" maxlength="50" pattern="[a-zA-Z0-9 ]+" title="Alphanumerical characters only" required autofocus autocomplete="name" />
             </div>
 
             <div class="mt-4">

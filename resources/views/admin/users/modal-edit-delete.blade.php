@@ -12,7 +12,7 @@
                 <label for="name" class="block font-bold text-gray-600">Name</label>
                 <input type="text" name="name" id="name"
                     class="w-full p-3 mb-4 border border-gray-300 rounded shadow focus:outline-none focus:ring-2 focus:ring-blue-600"
-                    value="{{$user->name}}" maxlength="50">
+                    value="{{$user->name}}" maxlength="50" pattern="[a-zA-Z0-9 ]+" title="Alphanumerical characters only">
 
                 <label for="email" class="block font-bold text-gray-600">Email</label>
                 <input type="email" name="email" id="email"
