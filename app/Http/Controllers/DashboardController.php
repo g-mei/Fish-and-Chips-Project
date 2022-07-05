@@ -55,10 +55,12 @@ class DashboardController extends Controller
 // Orders ================================================================
 
     function viewOrders() {
-        $orders = Order::whereIn('status', ['waiting','cooking'])->get();
+        $orders_unconfirmed = Order::whereIn('status', ['waiting'])->get();
+        $orders = Order::whereIn('status', ['cooking'])->get();
         $orders_pickup = Order::whereIn('status', ['pickup'])->get();
         
         return view('admin.dashboard')
+        ->with('orders_unconfirmed', $orders_unconfirmed)
         ->with('orders', $orders)
         ->with('orders_pickup', $orders_pickup);
     }
