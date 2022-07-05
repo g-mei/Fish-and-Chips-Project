@@ -7,6 +7,8 @@ const closeModalButtons = document.querySelectorAll('.closeModal');
 const addFoodModal = document.getElementById('addFoodModal');
 const openFoodModalButtons = document.querySelectorAll('.openFoodModal');
 
+const maxSize = 33554432;
+
 /**
  * 1. This goes through all buttons with a class of openModal.
  * 2. When the button is clicked, it checks for the button with that specific data-label.
@@ -20,6 +22,7 @@ openModalButtons.forEach(button => {
         event.preventDefault();
         const btnLabel = button.getAttribute('data-label');
         const btnId = button.getAttribute('data-id');
+        
 
         if(btnLabel === 'add') {
             addModal.classList.remove('hidden');
@@ -28,6 +31,26 @@ openModalButtons.forEach(button => {
         modals.forEach(modal => {
             if(modal.id === `${btnLabel}#${btnId}`){
                 modal.classList.remove('hidden');
+            }
+
+            if(btnLabel === 'editFood'){
+                const editFoodImgSize = document.getElementById(`edit_food_image#${btnId}`);
+                editFoodImgSize.addEventListener('change', function(){
+                    if(this.files[0].size > maxSize){
+                        alert("Image is too large. Maximum file size is 32MB");
+                        this.value = "";
+                    };
+                });
+            }
+
+            if(btnLabel === 'edit'){
+                const editPackImgSize = document.getElementById(`edit_pack_image#${btnId}`);
+                editPackImgSize.addEventListener('change', function(){
+                    if(this.files[0].size > maxSize){
+                        alert("Image is too large. Maximum file size is 32MB");
+                        this.value = "";
+                    };
+                });
             }
         });
     });
@@ -61,6 +84,7 @@ openFoodModalButtons.forEach(button => {
             addFoodModal.classList.remove('hidden');
         }
         
+       
         modals.forEach(modal => {
             if(modal.id === `${btnLabel}#${btnId}`){
                 modal.classList.remove('hidden');
