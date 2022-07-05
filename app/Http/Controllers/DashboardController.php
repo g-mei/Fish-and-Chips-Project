@@ -66,7 +66,7 @@ class DashboardController extends Controller
     }
 
     function viewOrderHistory() {
-        $orders = Order::whereIn('status', ['done', 'cancelled'])->get();
+        $orders = Order::whereIn('status', ['done', 'cancelled'])->paginate(10);
         
         return view('admin.dashboard')
         ->with('orders', $orders);
@@ -92,7 +92,7 @@ class DashboardController extends Controller
     }
 
     function cancelOrder(Request $request, $id) {
-        $orders = Order::whereIn('status', ['waiting','cooking'])->get();
+        $orders = Order::whereIn('status', ['cancelled','done'])->get();
         $order = Order::where('id', $id)->first();
 
         if($request->submit == "cancel"){
@@ -101,7 +101,7 @@ class DashboardController extends Controller
 
         $order->save();
 
-        return redirect('/dashboard/orders')->with('orders', $orders);
+        return redirect('/dashboard/order_history')->with('orders', $orders);
     }
     
 // Users =================================================================

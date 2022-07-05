@@ -59,7 +59,7 @@
 </div>
 
 {{-- Delete Modal for Packs --}}
-<div class="container flex justify-center mx-auto hidden modal" id="delete#{{$pack->id}}">
+<div class="container flex justify-center mx-auto hidden modal" id="deletePack#{{$pack->id}}">
     <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50" style="z-index: 90">
         <div class="max-w-sm p-6 bg-white rounded-md" style="z-index: 100">
             <div class="flex items-center justify-between">

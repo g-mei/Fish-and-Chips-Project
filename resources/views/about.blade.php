@@ -24,7 +24,7 @@
                         At Fish and Chips, we aren’t just here to provide you with the best food, we are here to provide you with a great service. We believe that each and every customer deserves to be treated with respect and dignity. 
                     </p>
                     <br/>
-                    <p>View our <a href="{{route('menu')}}" class="text-blue-700 font-bold">menu</a> and try to order online without having to wait in person. For all orders or general enquires, you can contact us at <b>03 123 456 789</b> or via in person at <b>123 Spring Road, Enterville 9876</b>.</p>
+                    <p>View our <a href="{{route('menu')}}" class="text-rose-300 font-bold hover:text-blue-700">menu</a> and try to order online without having to wait in person. For all orders or general enquires, you can contact us at <b>03 123 456 789</b> or via in person at <b>123 Spring Road, Enterville 9876</b>.</p>
                 </div>
             </div>
 

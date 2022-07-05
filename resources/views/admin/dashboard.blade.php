@@ -36,7 +36,9 @@
                     @elseif(Route::is('users'))
                         @include('admin.users.users')
                     @else
+                    <div class="text-center">
                         <h1>Welcome to the dashboard!</h1>
+                    </div>
                     @endif
                 </div>
             </div>
