@@ -66,6 +66,10 @@
                                 <p></p>
                                 <br/>
                             @endif
+                            
+                            @if ($food->ingredients)
+                            <p class="text-sm"><i>{{$food->ingredients->pluck('name')->implode(', ')}}</i></p>
+                            @endif
                         </div>
                     </div>
                 @endforeach
@@ -106,6 +110,10 @@
                             @else
                                 <p></p>
                                 <br/>
+                            @endif
+                            
+                            @if ($pack->foods)
+                            <p class="text-sm"><i>{{$pack->foods->pluck('name')->implode(', ')}}</i></p>
                             @endif
                         </div>
                     </div>
