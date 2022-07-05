@@ -12,16 +12,77 @@
     <body class="antialiased">
         <x-app-layout></x-app-layout>
         <div class="min-h-screen bg-gray-50">
-            <div class="flex justify-center items-center text-white" style="background-image: url('/img/image_2.jpg'); background-position: center; height:150px; width:100%; background-repeat:no-repeat;">
+            <div class="flex justify-center items-center text-blue-800 bg-pink-300 py-10">
                 <h1 style="font-size: 3rem; font-weight:bold">ABOUT US</h1>
             </div>
 
-            <div style="padding:5rem;">
-                <div class="text-center">
+            <div>
+                <div class="flex flex-col items-center text-center bg-blue-500 w-[100%] text-white p-20">
+                    <img src="{{asset('/img/logo.png')}}" alt="fish and chip logo" class="pb-10" style="width:250px">
                     <h2 class="text-xl font-bold mb-4">Who are we?</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates fugit, sit sed commodi eius ea unde nostrum aut necessitatibus neque. Temporibus, ut. Delectus totam quisquam veniam accusantium ratione. Voluptates repellat placeat a cumque consequatur tenetur deleniti fuga ducimus, vero quaerat ea nobis nesciunt, mollitia iure odit? Quas, rem iure inventore at totam accusantium nobis quam dolores quia, veritatis culpa assumenda harum eveniet perferendis suscipit libero nulla beatae animi dicta? Dolores corrupti eveniet accusantium, mollitia labore sapiente eos ex saepe beatae et ipsum blanditiis error nisi culpa quas nemo necessitatibus quasi atque repudiandae? Ducimus eos debitis ut accusamus dolore magnam repellendus pariatur nisi harum voluptatem reprehenderit laudantium quam repellat veritatis adipisci corrupti placeat quibusdam, eius quas quos. Mollitia labore laborum nulla eaque facere rem itaque? Suscipit officia, et natus voluptatem impedit nam rem dolores velit voluptatum sed accusantium, quam eos debitis similique minus repellendus. Iste, alias quis! Natus, aut facere iste saepe corporis adipisci hic. Harum corrupti consectetur nulla dolorem praesentium minima possimus suscipit deleniti placeat eligendi odit nihil cupiditate animi, id quia tempore ratione atque iusto. Quo quidem hic vel aut optio deserunt maxime esse nisi ea velit tempora rerum molestiae asperiores, nulla exercitationem. Distinctio repudiandae sapiente fugiat ratione minus! Similique, nemo magnam! Dolorem similique modi explicabo quisquam nostrum consequuntur aliquam eius! Omnis ut quam nostrum accusamus. Velit ad, dolorem maiores tempore placeat corporis officiis ipsum voluptatum quam sequi, eaque eveniet minus harum molestias illo inventore voluptate nesciunt omnis iste enim officia aliquam esse? Porro voluptas asperiores atque, reprehenderit deleniti adipisci eveniet officia, architecto ex consequuntur numquam, alias ducimus illum modi reiciendis est. Illum modi atque quo, earum aut facere reprehenderit ipsam tenetur architecto, quidem animi recusandae dignissimos. Vero, asperiores quam animi aliquid, ea laudantium aspernatur dolores accusamus qui voluptas unde id eaque et. Cum voluptate totam possimus. Accusamus nisi reprehenderit odit consectetur, consequuntur in qui soluta aut unde expedita perferendis assumenda quaerat, exercitationem eaque, magni perspiciatis? Optio quibusdam molestias iure veniam nobis amet. Reprehenderit porro laborum illum consequatur architecto facilis beatae incidunt amet repellendus corrupti! Laborum, autem amet obcaecati incidunt libero quaerat sapiente nihil delectus veniam laudantium quod iusto nulla fugit iste ipsa alias hic debitis culpa nemo dolore vitae! Et ratione numquam sed eius deleniti necessitatibus error at veniam cum laudantium rerum eos fugiat est iure qui dolor similique, explicabo excepturi quis quisquam voluptatem ipsam commodi! Ducimus dolor minima sunt inventore obcaecati soluta laboriosam aliquam blanditiis ab, incidunt harum dicta dignissimos dolorum in. Veniam amet quae id ipsum, quasi, quisquam, dolor dicta est fugiat unde a repellendus corrupti? Possimus, culpa minima quidem, maiores nulla maxime voluptatum nemo inventore facilis asperiores quisquam! Eius laudantium praesentium provident quae nihil vitae perspiciatis repellendus numquam delectus officiis, suscipit eligendi blanditiis possimus qui aliquam pariatur. Corrupti eveniet sunt, quia pariatur omnis nostrum. Iusto quam tempore hic voluptatum nulla? Excepturi iure impedit magni sapiente fugiat amet libero aliquid nobis dolorem assumenda numquam, voluptates iusto labore corrupti voluptate omnis enim quaerat maiores soluta odio animi. Ex a sapiente necessitatibus nemo odit soluta aperiam deleniti placeat!</p>
+                    <p>We pride ourselves in making the freshest and most delicious fish and chips you’ll ever have. We are a small fish and chips business that has over 20 years of experience in this industry and uses the best quality ingredients to provide our amazing customers.
+                        At Fish and Chips, we aren’t just here to provide you with the best food, we are here to provide you with a great service. We believe that each and every customer deserves to be treated with respect and dignity. 
+                    </p>
+                    <br/>
+                    <p>View our <a href="{{route('menu')}}" class="text-blue-700 font-bold">menu</a> and try to order online without having to wait in person. For all orders or general enquires, you can contact us at <b>03 123 456 789</b> or via in person at <b>123 Spring Road, Enterville 9876</b>.</p>
                 </div>
             </div>
+
+            {{-- Footer--}}
+            <footer class="bg-gray-100 text-center">
+                {{-- Footer Links --}}
+                <div class="p-6">
+                    <div class="grid lg:grid-cols-3 md:grid-cols-3">
+                    <div class="mb-6">
+                        <h5 class="uppercase font-bold mb-2.5 text-gray-800">Explore the Page</h5>
+                
+                        <ul class="list-none mb-0">
+                        <li class="mt-1">
+                            <a href="{{route('/')}}" class="text-gray-800">Home</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="{{route('menu')}}" class="text-gray-800">Menu</a>
+                        </li>
+                        <li class="mt-1">
+                            <a href="{{route('about')}}" class="text-gray-800">About</a>
+                        </li>
+                        </ul>
+                    </div>
+                
+                    <div class="mb-6">
+                        <h5 class="uppercase font-bold mb-2.5 text-gray-800">Where to find us?</h5>
+                        
+                        <div class="mb-0 text-gray-800 mt-1">
+                                <p>123 Spring Road,</p>
+                                <p>Enterville</p>
+                                <p>9876</p>
+                                <p class="mt-3">03 123 456 789</p>
+                        </div>
+                    </div>
+
+                    <div class="mb-6">
+                        <h5 class="uppercase font-bold mb-2.5 text-gray-800">Follow Us</h5>
+                        
+                        <ul class="list-none mb-0">
+                            <li class="mt-1">
+                            <a href="" class="text-gray-800">Facebook</a>
+                            </li>
+                            <li class="mt-1">
+                            <a href="" class="text-gray-800">Instagram</a>
+                            </li>
+                            <li class="mt-1">
+                            <a href="" class="text-gray-800">Twiter</a>
+                            </li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="text-center text-gray-700 p-4" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2022 Copyright:
+                <a class="text-gray-800" href="{{route('/')}}">Fish and Chips</a>
+                </div>
+            </footer>
         </div>
     </body>
 </html>

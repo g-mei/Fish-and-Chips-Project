@@ -997,6 +997,10 @@ select {
   margin-left: auto;
   margin-right: auto;
 }
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+}
 .ml-3 {
   margin-left: 0.75rem;
 }
@@ -1551,6 +1555,9 @@ select {
 .p-1 {
   padding: 0.25rem;
 }
+.p-20 {
+  padding: 5rem;
+}
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -1615,6 +1622,10 @@ select {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+.py-20 {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1662,6 +1673,12 @@ select {
 }
 .pr-12 {
   padding-right: 3rem;
+}
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+.pb-20 {
+  padding-bottom: 5rem;
 }
 .text-left {
   text-align: left;
