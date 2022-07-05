@@ -18,6 +18,12 @@
         <section>            
         	<br>
             <div class="relative px-5">
+                @if ($message = Session::get('order_submitted'))
+                    <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
+                      <strong>Order has been placed</strong>
+                    </div>
+                @endif
+                
                 <h1 class="text-2xl">Orders in Progress</h1>
 
                 <div style="overflow-x:auto;">

@@ -201,7 +201,7 @@ class OrderController extends Controller
         $order->subtotal = $this->calculateSubtotal($order);
         $order->save();
         
-        return redirect('/order-history');
+        return redirect('/order-history')->with('order_submitted', 'The order has been placed');
     }
 
     //view order history page
