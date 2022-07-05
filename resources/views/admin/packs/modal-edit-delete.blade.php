@@ -1,5 +1,5 @@
 {{-- Edit Modal for Pack --}}
-<div class="container flex justify-center mx-auto hidden modal" id="edit#{{$pack->id}}">
+<div class="container flex justify-center mx-auto hidden modal" id="editPack#{{$pack->id}}">
     <div class="absolute inset-0 flex items-center justify-center bg-gray-700 bg-opacity-50" style="z-index: 90">
         <div class="max-w-xl p-6 bg-white rounded-md" style="z-index: 100">
             <div class="flex items-center justify-between">

@@ -32,8 +32,8 @@
                 </td>
                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-wrap">{{$pack->description}}</td>
                 <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
-                    <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$pack->id}}">Edit</button>
-                    <button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$pack->id}}">Delete</button>
+                    <button class="openModal text-blue-700 px-1" data-label="editPack" data-id="{{$pack->id}}">Edit</button>
+                    <button class="openModal text-red-600 px-1" data-label="deletePack" data-id="{{$pack->id}}">Delete</button>
                 </td>
             </tr>
             

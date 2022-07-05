@@ -43,7 +43,7 @@ openModalButtons.forEach(button => {
                 });
             }
 
-            if(btnLabel === 'edit'){
+            if(btnLabel === 'editPack'){
                 const editPackImgSize = document.getElementById(`edit_pack_image#${btnId}`);
                 editPackImgSize.addEventListener('change', function(){
                     if(this.files[0].size > maxSize){
