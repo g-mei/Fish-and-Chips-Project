@@ -9,10 +9,14 @@ use App\Models\Order;
 class DashboardController extends Controller
 {
     function index() {
-//         $foods = Food::all();
-//         return view('admin.dashboard')->with('foods', $foods);
-
-        return view('admin.dashboard');
+        $orders_unconfirmed = Order::whereIn('status', ['waiting'])->get();
+        $orders = Order::whereIn('status', ['cooking'])->get();
+        $orders_pickup = Order::whereIn('status', ['pickup'])->get();
+        
+        return view('admin.dashboard')
+        ->with('orders_unconfirmed', $orders_unconfirmed)
+        ->with('orders', $orders)
+        ->with('orders_pickup', $orders_pickup);
     }
     
 // Food ==================================================================

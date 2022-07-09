@@ -23,12 +23,8 @@
                         @include('admin.categories.categories')
                     @elseif(Route::is('food'))
                         @include('admin.food.food-items')
-                    @elseif(Route::is('food-edit'))
-                        @include('admin.food.food-edit')
                     @elseif(Route::is('packs'))
                         @include('admin.packs.packs')
-                    @elseif(Route::is('orders'))
-                        @include('admin.orders.orders')
                     @elseif(Route::is('orders'))
                         @include('admin.orders.orders')
                     @elseif(Route::is('order_history'))
@@ -36,9 +32,7 @@
                     @elseif(Route::is('users'))
                         @include('admin.users.users')
                     @else
-                    <div class="text-center">
-                        <h1>Welcome to the dashboard!</h1>
-                    </div>
+                        @include('admin.orders.orders')
                     @endif
                 </div>
             </div>
