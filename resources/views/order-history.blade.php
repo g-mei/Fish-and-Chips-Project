@@ -20,7 +20,13 @@
             <div class="relative px-5">
                 @if ($message = Session::get('order_submitted'))
                     <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
-                      <strong>Order has been placed</strong>
+                      <strong>{{$message}}</strong>
+                    </div>
+                @endif
+
+                @if ($message = Session::get('order_failed'))
+                    <div class="p-4 mb-4 text-sm text-red-700 bg-red-300 rounded-lg" role="alert">
+                      <strong>{{$message}}</strong>
                     </div>
                 @endif
                 

@@ -55,25 +55,32 @@ class OrderController extends Controller
            ]);
 
           } else {
-            //create a new order in the orders table
-            $order = new Order;
-            $order->user_id = auth()->user()->id;
-            $order->status = "incart";
-            $order->save();
+            //check if customer has less than 3 orders that aren't waiting, cooking or under pickup.
+            $existing_orders = Order::where('user_id', auth()->user()->id)->whereIn('status', ['waiting', 'cooking', 'pickup'])->count();
+
+            if($existing_orders < 3) {
+                //create a new order in the orders table
+                $order = new Order;
+                $order->user_id = auth()->user()->id;
+                $order->status = "incart";
+                $order->save();
 
 
-            //adding the items in the foreign table -> order_food
-            $order->foods()->attach([ $id =>
-                [
-                    'qty' => $request->qty,
-                    'instructions' => $request->instructions
-                ]
-            ]);
+                //adding the items in the foreign table -> order_food
+                $order->foods()->attach([ $id =>
+                    [
+                        'qty' => $request->qty,
+                        'instructions' => $request->instructions
+                    ]
+                ]);
+            } else {
+                return redirect('/order-history')->with('order_failed', 'You currently have existing orders. A new order can be placed, once it has been picked up.');
+            }
           }
           
           $order->subtotal = $this->calculateSubtotal($order);
           $order->save();
-          return redirect('/menu');
+          return redirect('/order');
 
       } else {
           //user needs to login to place order
@@ -105,25 +112,32 @@ class OrderController extends Controller
            ]);
 
           } else {
-            //create a new order in the orders table
-            $order = new Order;
-            $order->user_id = auth()->user()->id;
-            $order->status = "incart";
-            $order->save();
+            //check if customer has less than 3 orders that aren't waiting, cooking or under pickup.
+            $existing_orders = Order::where('user_id', auth()->user()->id)->whereIn('status', ['waiting', 'cooking', 'pickup'])->count();
+
+            if($existing_orders < 3) {
+                //create a new order in the orders table
+                $order = new Order;
+                $order->user_id = auth()->user()->id;
+                $order->status = "incart";
+                $order->save();
 
 
-            //adding the items in the foreign table -> order_pack
-            $order->packs()->attach([ $id =>
-                [
-                    'qty' => $request->qty,
-                    'instructions' => $request->instructions
-                ]
-            ]);
+                //adding the items in the foreign table -> order_pack
+                $order->packs()->attach([ $id =>
+                    [
+                        'qty' => $request->qty,
+                        'instructions' => $request->instructions
+                    ]
+                ]);
+            } else {
+                return redirect('/order-history')->with('order_failed', 'You currently have existing orders. A new order can be placed, once it has been picked up.');
+            }
           }
 
           $order->subtotal = $this->calculateSubtotal($order);
           $order->save();
-          return redirect('/menu');
+          return redirect('/order');
 
       } else {
           //user needs to login to place order
