@@ -80,7 +80,7 @@ class OrderController extends Controller
           
           $order->subtotal = $this->calculateSubtotal($order);
           $order->save();
-          return redirect('/order');
+          return redirect('/menu');
 
       } else {
           //user needs to login to place order
@@ -137,7 +137,7 @@ class OrderController extends Controller
 
           $order->subtotal = $this->calculateSubtotal($order);
           $order->save();
-          return redirect('/order');
+          return redirect('/menu');
 
       } else {
           //user needs to login to place order

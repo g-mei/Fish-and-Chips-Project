@@ -15,33 +15,35 @@
         <div class="flex justify-center items-center text-white" style="background-image: url('/img/image_1.jpg'); background-position: center; height:150px; width:100%; background-repeat:no-repeat;">
             <h1 style="font-size: 3rem; font-weight:bold">MENU</h1>
         </div>
-        <section class="flex justify-center" style="padding: 5rem">
+        <section class="grid grid-custom">
             <aside class="mb-4 mr-3 text-center">
                 <nav>
                     <ul>
                         @foreach ($categories as $category)
-                        <li class="py-2"><a href="{{route('menu', ['category' => $category->id])}}">{{ $category->name }} ({{$category->food()->count() + $category->pack()->count()}})</a></li>   
+                        <li class="py-2 category-link"><a href="{{route('menu', ['category' => $category->id])}}">{{ $category->name }} ({{$category->food()->count() + $category->pack()->count()}})</a></li>   
                         @endforeach
-                        <li class="py-2"><a href="{{route('menu', ['category' => 'uncategorized'])}}">Uncategorized</a></li>
-                        <li class="py-2"><a href="{{route('menu')}}">Show All</a></li>   
+                        <li class="py-2 category-link"><a href="{{route('menu', ['category' => 'uncategorized'])}}">Uncategorized</a></li>
+                        <li class="py-2 category-link"><a href="{{route('menu')}}">Show All</a></li>   
                     </ul>
                 </nav>
             </aside>
             <div class="grid lg:grid-cols-4 md:grid-cols-3">
                 @foreach ($foods as $food)
-                    @include('add-cart-modal')
                     <div class="mb-4 mr-3 hover:bg-white hover:shadow-md" style="max-height: 500px">
+
+                        @include('add-cart-modal')
+
                         @if ($food->image)
                         <div class="flex justify-center">
                             <div class="relative">
-                                <i class="fa fa-plus fa-3x absolute openModal" style="right: 0.25rem; top:0.25rem; color:white;" aria-hidden="true" data-id="{{$food->id}}"></i>
+                                <i class="fa fa-plus fa-3x absolute text-white openModal plus-icon" aria-hidden="true" data-id="{{$food->id}}"></i>
                                 <img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 500px; height: 250px;"> 
                             </div>
                         </div>
                         @else
                         <div class="flex justify-center">
                             <div class="bg-blue-400 relative" style="width:100%; height: 250px;">
-                                <i class="fa fa-plus fa-3x absolute openModal" style="right: 0.25rem; top:0.25rem; color:white;" data-id="{{$food->id}}"></i>
+                                <i class="fa fa-plus fa-3x absolute openModal plus-icon" data-id="{{$food->id}}"></i>
                                 <div class="text-gray-600 flex justify-center" style="margin-top:100px">
                                     <p>{{$food->name}}</p>
                                 </div>
@@ -74,19 +76,21 @@
                     </div>
                 @endforeach
                 @foreach ($packs as $pack)
-                    @include('add-cart-pack-modal')
                     <div class="mb-4 mr-3 hover:bg-white hover:shadow-md" style="max-height: 500px">
+
+                        @include('add-cart-pack-modal')
+
                         @if ($pack->image)
                         <div class="flex justify-center">
                             <div class="relative">
-                                <i class="fa fa-plus fa-3x absolute openPackModal" style="right: 0.25rem; top:0.25rem; color:white;" aria-hidden="true" data-id="{{$pack->id}}"></i>
+                                <i class="fa fa-plus fa-3x absolute openPackModal plus-icon" aria-hidden="true" data-id="{{$pack->id}}"></i>
                                 <img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 500px; height: 250px;"> 
                             </div>
                         </div>
                         @else
                         <div class="flex justify-center">
                             <div class="bg-blue-400 relative" style="width:100%; height: 250px;">
-                                <i class="fa fa-plus fa-3x absolute openPackModal" style="right: 0.25rem; top:0.25rem; color:white;" data-id="{{$pack->id}}"></i>
+                                <i class="fa fa-plus fa-3x absolute openPackModal plus-icon" data-id="{{$pack->id}}"></i>
                                 <div class="text-gray-600 flex justify-center" style="margin-top:100px">
                                     <p>{{$pack->name}}</p>
                                 </div>

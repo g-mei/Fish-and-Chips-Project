@@ -157,7 +157,23 @@
 
                         <div class="hidden sm:flex sm:items-center sm:ml-6">
                             <x-jet-nav-link href="{{ route('order') }}" :active="request()->routeIs('order')" class="hover:text-pink-300">
-                                {{ __('Cart') }}
+                                {{ __('Cart') }} (
+                                    @if(DB::table('orders')->where('user_id', Auth::user()->id)->where('status', 'incart')->first())
+                                        <div class="hidden">{{$i=0}}</div>
+                                        
+                                        @if(DB::table('order_food')->where('order_id', DB::table('orders')->where('user_id', Auth::user()->id)->where('status', 'incart')->first()->id))
+                                            <div class="hidden">{{$i+=DB::table('order_food')->where('order_id', DB::table('orders')->where('user_id', Auth::user()->id)->where('status', 'incart')->first()->id)->count()}}</div>
+                                        @endif
+
+                                        @if(DB::table('order_pack')->where('order_id', DB::table('orders')->where('user_id', Auth::user()->id)->where('status', 'incart')->first()->id))
+                                            <div class="hidden">{{$i+=DB::table('order_pack')->where('order_id', DB::table('orders')->where('user_id', Auth::user()->id)->where('status', 'incart')->first()->id)->count()}}</div>
+                                        @endif
+
+                                        {{$i}}
+                                    @else
+                                        0
+                                    @endif
+                                    )
                             </x-jet-nav-link>
                             <!-- Settings Dropdown -->
                             <div class="ml-3 relative">
