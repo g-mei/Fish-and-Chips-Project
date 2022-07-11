@@ -74,7 +74,7 @@ class OrderController extends Controller
                     ]
                 ]);
             } else {
-                return redirect('/order-history')->with('order_failed', 'You currently have existing orders. A new order can be placed, once it has been picked up.');
+                return redirect('/order-history')->with('order_failed', 'You have reached the maximum number of active orders (3). New orders can only be placed after the existing orders have been picked up or cancelled.');
             }
           }
           
@@ -131,7 +131,7 @@ class OrderController extends Controller
                     ]
                 ]);
             } else {
-                return redirect('/order-history')->with('order_failed', 'You currently have existing orders. A new order can be placed, once it has been picked up.');
+                return redirect('/order-history')->with('order_failed', 'You have reached the maximum number of active orders (3). New orders can only be placed after the existing orders have been picked up or cancelled.');
             }
           }
 
