@@ -20,12 +20,18 @@ return new class extends Migration
         
         Schema::table('foods', function (Blueprint $table) {
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')
+            ->references('id')
+            ->on('categories')
+            ->onDelete('set null');
         });
         
         Schema::table('packs', function (Blueprint $table) {
             $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories');
+            $table->foreign('category_id')
+            ->references('id')
+            ->on('categories')
+            ->onDelete('set null');
         });
         
         Schema::create('order_food', function (Blueprint $table) {
