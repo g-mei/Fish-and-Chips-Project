@@ -10,6 +10,7 @@
             <thead>
                 <tr>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">User</th>
+                    <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Order ID</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Instructions</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Items</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Subtotal</th>
@@ -21,6 +22,7 @@
                 @csrf
                 <tr class="hover:bg-gray-100">
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->id}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                         @foreach ($order->foods as $food) 
@@ -59,6 +61,7 @@
             <thead>
                 <tr>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">User</th>
+                    <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Order ID</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Instructions</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Items</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Subtotal</th>
@@ -70,6 +73,7 @@
                 @csrf
                 <tr class="hover:bg-gray-100">
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->id}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                         @foreach ($order->foods as $food) 
@@ -108,6 +112,7 @@
             <thead>
                 <tr>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">User</th>
+                    <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Order ID</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Instructions</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Items</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Subtotal</th>
@@ -119,6 +124,7 @@
                 @csrf
                 <tr class="hover:bg-gray-100">
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->id}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
                     <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
                         @foreach ($order->foods as $food) 
