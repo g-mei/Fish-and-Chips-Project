@@ -98,6 +98,7 @@ class DashboardController extends Controller
     function cancelOrder(Request $request, $id) {
         $orders = Order::whereIn('status', ['cancelled','done'])->get();
         $order = Order::where('id', $id)->first();
+        $order_id = $order->id;
 
         if($request->submit == "cancel"){
             $order->status = "cancelled"; 
@@ -105,7 +106,9 @@ class DashboardController extends Controller
 
         $order->save();
 
-        return redirect('/dashboard/order_history')->with('orders', $orders);
+        return redirect('/dashboard/order_history')
+        ->with('orders', $orders)
+        ->with('order_cancelled', 'Order ' . $order_id . ' has been cancelled');
     }
     
 // Users =================================================================

@@ -1,6 +1,12 @@
 <x-jet-validation-errors class="mb-4" />
 
 <div class="mb-5">
+	@if ($message = Session::get('order_cancelled'))
+	<div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg" role="alert">
+    	<strong>{{$message}}</strong>
+    </div>
+	@endif
+                    
     <h1 class="text-2xl">Order History</h1>
 
     <h2 class="text-xl pt-10 font-bold">Past Orders: DONE</h2>
