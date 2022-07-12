@@ -28,8 +28,8 @@ class MenuController extends Controller
         
         if (request()->category) {
             if ((request()->category) === 'uncategorized') {
-                $foods = DB::table('foods')->whereNull('category_id')->get();
-                $packs = DB::table('packs')->whereNull('category_id')->get();
+                $foods = Food::where('category_id', null)->get();
+                $packs = Pack::where('category_id', null)->get();
                 
             } else {
                 $id = request()->query('category');
