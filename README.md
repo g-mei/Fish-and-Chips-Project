@@ -1,4 +1,6 @@
-# Fish and Chips website
+# Fish and Chips Website
+
+<p align="center"><img src="https://user-images.githubusercontent.com/86360050/178400829-5dfef2ee-7a2f-4615-9a48-fc619fa0ed06.png" alt="homepage of fish and chips"></p>
 
 ## Project Description
 A Laravel food ordering website that utilises packages, such as Jetstream and Tailwind.
