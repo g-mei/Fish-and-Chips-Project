@@ -26,10 +26,10 @@
             @foreach ($orders as $order)
                 @if($order->status === "done")
                     <tr class="hover:bg-gray-100">
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->id}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->user->name??null}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->id}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->instructions}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">
                             @foreach ($order->foods as $food) 
                                 <b>{{$food->pivot->qty}}x {{$food->name}}</b> {{$food->pivot->instructions}}<br>
                             @endforeach
@@ -37,8 +37,8 @@
                                 <b>{{$pack->pivot->qty}}x {{$pack->name}}</b> {{$pack->pivot->instructions}}<br>
                             @endforeach
                         </td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->status}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->subtotal}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->status}}</td>
                     </tr>
                 @endif
             @endforeach
@@ -63,10 +63,10 @@
             @foreach ($orders as $order)
                 @if($order->status === "cancelled")
                     <tr class="hover:bg-gray-100">
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
-	                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->id}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->user->name??null}}</td>
+	                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->id}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->instructions}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">
                             @foreach ($order->foods as $food) 
                                 <b>{{$food->pivot->qty}}x {{$food->name}}</b> {{$food->pivot->instructions}}<br>
                             @endforeach
@@ -74,8 +74,8 @@
                                 <b>{{$pack->pivot->qty}}x {{$pack->name}}</b> {{$pack->pivot->instructions}}<br>
                             @endforeach
                         </td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->status}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->subtotal}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->status}}</td>
                     </tr>
                 @endif
             @endforeach
