@@ -19,7 +19,6 @@
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Instructions</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Items</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Subtotal</th>
-                    <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Status</th>
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
@@ -38,7 +37,6 @@
                             @endforeach
                         </td>
                         <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->subtotal}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->status}}</td>
                     </tr>
                 @endif
             @endforeach
@@ -56,7 +54,6 @@
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Instructions</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Items</th>
                     <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Subtotal</th>
-                    <th scope="col" class="py-3 px-6 text-m font-medium tracking-wider text-left text-gray-800 uppercase">Status</th>
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
@@ -75,7 +72,6 @@
                             @endforeach
                         </td>
                         <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->subtotal}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->status}}</td>
                     </tr>
                 @endif
             @endforeach
