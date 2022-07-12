@@ -32,11 +32,11 @@
                                 @isset($foods)
                                     @foreach ($foods as $food)
                                         <tr class="hover:bg-gray-100">
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->name}}</td>
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->qty}}</td>
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->qty * $food->cost}}</td>
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->pivot->instructions}}</td>
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">{{$food->name}}</td>
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">{{$food->pivot->qty}}</td>
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">{{$food->pivot->qty * $food->cost}}</td>
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">{{$food->pivot->instructions}}</td>
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">
                                                 <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$food->pivot->id}}">Edit</button>
                                                 <button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$food->pivot->id}}">Delete</button>            
                                             </td>
@@ -48,11 +48,11 @@
                                 @isset($packs)
                                     @foreach ($packs as $pack)
                                         <tr class="hover:bg-gray-100">
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->name}}</td>
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->pivot->qty}}</td>
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->pivot->qty * $pack->cost}}</td>
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$pack->pivot->instructions}}</td>
-                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">{{$pack->name}}</td>
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">{{$pack->pivot->qty}}</td>
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">{{$pack->pivot->qty * $pack->cost}}</td>
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">{{$pack->pivot->instructions}}</td>
+                                            <td class="py-4 px-6 text-sm font-medium text-gray-900 wrap">
                                                 <button class="openModal text-blue-700 px-1" data-label="edit" data-id="{{$pack->pivot->id}}">Edit</button>
                                                 <button class="openModal text-red-600 px-1" data-label="delete" data-id="{{$pack->pivot->id}}">Delete</button>            
                                             </td>
