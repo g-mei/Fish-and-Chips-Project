@@ -23,17 +23,17 @@
                 <tbody class="bg-white divide-y divide-gray-200">
                 @foreach ($foods as $food)
                     <tr class="hover:bg-gray-100">
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap"><img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 200px"></td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->name}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->cost}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$food->category->name??null}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900"><img src="{{ asset('storage/image/food_items/'.$food->image) }}" alt="{{$food->image}}" style="width: 200px"></td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$food->name}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$food->cost}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$food->category->name??null}}</td>
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">
                             @foreach ($food->ingredients as $ingredient)
                                 {{$ingredient->name}}
                             @endforeach
                         </td>
                         <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-wrap">{{$food->description}}</td>
-                        <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                        <td class="py-4 px-6 text-sm font-medium text-gray-900">
                             <button class="openModal text-blue-700 px-1" data-label="editFood" data-id="{{$food->id}}">Edit</button>
                             <button class="openModal text-red-600 px-1" data-label="deleteFood" data-id="{{$food->id}}">Delete</button>
                         </td>

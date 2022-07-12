@@ -21,10 +21,10 @@
             <form action="{{route('updateOrderStatus', ['id' => $order->id])}}" method="POST">
                 @csrf
                 <tr class="hover:bg-gray-100">
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->id}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->user->name??null}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->id}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->instructions}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">
                         @foreach ($order->foods as $food) 
                             <b>{{$food->pivot->qty}}x {{$food->name}}</b> {{$food->pivot->instructions}}<br>
                         @endforeach
@@ -32,8 +32,8 @@
                             <b>{{$pack->pivot->qty}}x {{$pack->name}}</b> {{$pack->pivot->instructions}}<br>
                         @endforeach
                     </td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->subtotal}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">
                         @if($order->status === "waiting")
                         <button type="submit" class="bg-blue-400 p-1 rounded-sm">Cooking</button>
                         @endif
@@ -42,7 +42,7 @@
                         <button type="submit" class="bg-green-500 p-1 rounded-sm">Done</button>
                         @endif
                     </td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">
                         <button class="openModal bg-gray-400 p-1 rounded-sm" data-label="orderFood" data-id="{{$order->id}}">Cancel Order</button>
                     </td>
                 </tr>
@@ -72,10 +72,10 @@
             <form action="{{route('updateOrderStatus', ['id' => $order->id])}}" method="POST">
                 @csrf
                 <tr class="hover:bg-gray-100">
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->id}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->user->name??null}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->id}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->instructions}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">
                         @foreach ($order->foods as $food) 
                             <b>{{$food->pivot->qty}}x {{$food->name}}</b> {{$food->pivot->instructions}}<br>
                         @endforeach
@@ -83,8 +83,8 @@
                             <b>{{$pack->pivot->qty}}x {{$pack->name}}</b> {{$pack->pivot->instructions}}<br>
                         @endforeach
                     </td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->subtotal}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">
                         @if($order->status === "waiting")
                         <button type="submit" class="bg-blue-400 p-1 rounded-sm">Cooking</button>
                         @endif
@@ -93,7 +93,7 @@
                         <button type="submit" class="bg-green-500 p-1 rounded-sm">Done</button>
                         @endif
                     </td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">
                         <button class="openModal bg-gray-400 p-1 rounded-sm" data-label="orderFood" data-id="{{$order->id}}">Cancel Order</button>
                     </td>
                 </tr>
@@ -123,10 +123,10 @@
             <form action="{{route('updateOrderStatus', ['id' => $order->id])}}" method="POST">
                 @csrf
                 <tr class="hover:bg-gray-100">
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->user->name??null}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->id}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->instructions}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->user->name??null}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->id}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->instructions}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">
                         @foreach ($order->foods as $food) 
                             <b>{{$food->pivot->qty}}x {{$food->name}}</b> {{$food->pivot->instructions}}<br>
                         @endforeach
@@ -134,8 +134,8 @@
                             <b>{{$pack->pivot->qty}}x {{$pack->name}}</b> {{$pack->pivot->instructions}}<br>
                         @endforeach
                     </td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">{{$order->subtotal}}</td>
-                    <td class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap">
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">{{$order->subtotal}}</td>
+                    <td class="py-4 px-6 text-sm font-medium text-gray-900">
                         @if($order->status === "pickup")
                         <button type="submit" class="bg-green-600 p-1 rounded-sm text-white">Picked up</button>
                         @endif
